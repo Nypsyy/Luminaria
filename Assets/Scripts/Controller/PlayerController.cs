@@ -5,22 +5,26 @@ using Rewired;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController Instance { get; private set; }
+
     [SerializeField] private int playerId = 0;
     [SerializeField] private float speed = 3.0f;
     [SerializeField] private float jumpForce = 3.0f;
 
     private Player player;
-    private Rigidbody rb;
+    private Rigidbody2D rb;
     private Vector2 move;
     private bool jump;
     private bool isGrounded = true;
 
+
     private void Awake()
     {
         player = ReInput.players.GetPlayer(playerId);
-        rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody2D>();
 
         move = Vector2.zero;
+
     }
 
     private void Update()
@@ -62,4 +66,5 @@ public class PlayerController : MonoBehaviour
     {
         isGrounded = false;
     }
+
 }
