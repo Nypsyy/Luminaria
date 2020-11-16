@@ -16,7 +16,7 @@ public class EquipmentManager : MonoBehaviour
 
     #endregion 
 
-    public Equipment[] currentEquipment;
+    public Item[] currentEquipment;
 
     Inventory inventory;
 
@@ -27,16 +27,17 @@ public class EquipmentManager : MonoBehaviour
     {
         inventory = Inventory.instance;
 
-        int numSlots = System.Enum.GetNames(typeof(EquipmentSlot)).Length;
-        currentEquipment = new Equipment[numSlots];
+        int numSlots = System.Enum.GetNames(typeof(Item.EquipmentSlot)).Length;
+        currentEquipment = new Item[numSlots];
 
     }
 
-    public void Equip(Equipment newItem)
+    public void Equip(Item newItem)
     {
         int slotIndex = (int)newItem.equipSlot;
+        Debug.Log(slotIndex);
 
-        Equipment oldItem = null;
+        Item oldItem = null;
 
         
         if (currentEquipment[slotIndex] != null)
@@ -57,7 +58,7 @@ public class EquipmentManager : MonoBehaviour
     {
         if (currentEquipment[slotIndex] != null)
         {
-            Equipment oldItem = currentEquipment[slotIndex];
+            Item oldItem = currentEquipment[slotIndex];
             inventory.Add(oldItem);
 
             currentEquipment[slotIndex] = null;

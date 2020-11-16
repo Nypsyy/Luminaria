@@ -4,11 +4,13 @@ public class ItemPickUp : Interactable
 {
 
 	public Item item;   // Item to put in the inventory on pickup
+	public GameObject itemUI;
 
 	// When the player interacts with the item
 	public override void Interact()
 	{
 		base.Interact();
+		Debug.Log("PickUp");
 
 		PickUp();   // Pick it up!
 	}
@@ -16,12 +18,15 @@ public class ItemPickUp : Interactable
 	// Pick up the item
 	void PickUp()
 	{
-		Debug.Log("Picking up " + item.name);
 		bool wasPickedUp = Inventory.instance.Add(item);    // Add to inventory
 
 		// If successfully picked up
 		if (wasPickedUp)
-			Destroy(gameObject);    // Destroy item from scene
+		{
+			item.isPickedUp = true;
+			itemUI.SetActive(false);
+			//Destroy(gameObject);    // Destroy item from scene
+		}
 	}
 
 }

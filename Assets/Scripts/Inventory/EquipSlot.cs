@@ -8,10 +8,10 @@ public class EquipSlot : MonoBehaviour
 	public Image icon;          // Reference to the Icon image
 	public Button removeButton; // Reference to the remove button
 
-	Equipment equip;
+	Item equip;
 
 	// Add item to the slot
-	public void AddItem(Equipment newEquip)
+	public void AddItem(Item newEquip)
 	{
 
 		equip = newEquip;
