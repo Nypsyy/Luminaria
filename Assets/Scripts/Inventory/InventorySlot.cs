@@ -6,43 +6,43 @@ using UnityEngine.UI;
 public class InventorySlot : MonoBehaviour
 {
 
-	public Image icon;          // Reference to the Icon image
-	public Button removeButton; // Reference to the remove button
+    public Image icon;          // Reference to the Icon image
+    public Button removeButton; // Reference to the remove button
 
-	Item item;  // Current item in the slot
+    Item item;  // Current item in the slot
 
-	// Add item to the slot
-	public void AddItem(Item newItem)
-	{
-
-		item = newItem;
-
-		icon.sprite = item.icon;
-		icon.enabled = true;
-		removeButton.interactable = true;
-		
-	}
-
-	// Clear the slot
-	public void ClearSlot()
-	{
-		item = null;
-
-		icon.sprite = null;
-		icon.enabled = false;
-		removeButton.interactable = false;
-	}
-
-	public void OnRemoveButton()
+    // Add item to the slot
+    public void AddItem(Item newItem)
     {
-		Inventory.instance.Remove(item);
+
+        item = newItem;
+
+        icon.sprite = item.icon;
+        icon.enabled = true;
+        removeButton.interactable = true;
+
     }
 
-	public void UseItem()
+    // Clear the slot
+    public void ClearSlot()
     {
-		if(item != null)
+        item = null;
+
+        icon.sprite = null;
+        icon.enabled = false;
+        removeButton.interactable = false;
+    }
+
+    public void OnRemoveButton()
+    {
+        Inventory.instance.Remove(item);
+    }
+
+    public void UseItem()
+    {
+        if (item != null)
         {
-			item.Use();
+            item.Use();
         }
     }
 }

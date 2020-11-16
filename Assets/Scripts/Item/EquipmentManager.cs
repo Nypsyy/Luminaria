@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Rewired;
 
 public class EquipmentManager : MonoBehaviour
 {
@@ -16,20 +17,54 @@ public class EquipmentManager : MonoBehaviour
 
     #endregion 
 
+<<<<<<< Updated upstream
     public Item[] currentEquipment;
+=======
+    [SerializeField] private int playerId = 0;
 
-    Inventory inventory;
+    public Equipment[] currentEquipment;
+>>>>>>> Stashed changes
+
+    private Player player;
+    private Inventory inventory;
 
     public delegate void OnEquipmentChangedCallback();
     public OnEquipmentChangedCallback onEquipmentChangedCallback;
 
+    private bool unequipAll;
+
     void Start()
     {
+        player = ReInput.players.GetPlayer(playerId);
         inventory = Inventory.instance;
 
+<<<<<<< Updated upstream
         int numSlots = System.Enum.GetNames(typeof(Item.EquipmentSlot)).Length;
         currentEquipment = new Item[numSlots];
+=======
+        int numSlots = System.Enum.GetNames(typeof(EquipmentSlot)).Length;
+        currentEquipment = new Equipment[numSlots];
+    }
+>>>>>>> Stashed changes
 
+    void Update()
+    {
+        GetInputs();
+
+        if (unequipAll)
+        {
+            UnequipAll();
+        }
+
+        if (onEquipmentChangedCallback != null)
+        {
+            onEquipmentChangedCallback.Invoke();
+        }
+    }
+
+    private void GetInputs()
+    {
+        unequipAll = player.GetButtonDown("Unequip All");
     }
 
     public void Equip(Item newItem)
@@ -39,14 +74,14 @@ public class EquipmentManager : MonoBehaviour
 
         Item oldItem = null;
 
-        
+
         if (currentEquipment[slotIndex] != null)
         {
             oldItem = currentEquipment[slotIndex];
             inventory.Add(oldItem);
         }
 
-        if(onEquipmentChangedCallback != null)
+        if (onEquipmentChangedCallback != null)
         {
             onEquipmentChangedCallback.Invoke();
         }
@@ -63,7 +98,7 @@ public class EquipmentManager : MonoBehaviour
 
             currentEquipment[slotIndex] = null;
 
-            
+
         }
 
         if (onEquipmentChangedCallback != null)
@@ -74,26 +109,11 @@ public class EquipmentManager : MonoBehaviour
 
     public void UnequipAll()
     {
+        Debug.Log("UNEQUIPPING");
         for (int i = 0; i < currentEquipment.Length; i++)
         {
             Unequip(i);
         }
 
     }
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            UnequipAll();
-        }
-
-        if (onEquipmentChangedCallback != null)
-        {
-            onEquipmentChangedCallback.Invoke();
-        }
-    }
-
-    
-
 }
