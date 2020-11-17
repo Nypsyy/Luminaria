@@ -17,13 +17,8 @@ public class EquipmentManager : MonoBehaviour
 
     #endregion 
 
-<<<<<<< Updated upstream
     public Item[] currentEquipment;
-=======
     [SerializeField] private int playerId = 0;
-
-    public Equipment[] currentEquipment;
->>>>>>> Stashed changes
 
     private Player player;
     private Inventory inventory;
@@ -38,14 +33,9 @@ public class EquipmentManager : MonoBehaviour
         player = ReInput.players.GetPlayer(playerId);
         inventory = Inventory.instance;
 
-<<<<<<< Updated upstream
         int numSlots = System.Enum.GetNames(typeof(Item.EquipmentSlot)).Length;
         currentEquipment = new Item[numSlots];
-=======
-        int numSlots = System.Enum.GetNames(typeof(EquipmentSlot)).Length;
-        currentEquipment = new Equipment[numSlots];
     }
->>>>>>> Stashed changes
 
     void Update()
     {

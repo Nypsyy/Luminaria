@@ -782,10 +782,10 @@ GameObject:
   - component: {fileID: 1170861873}
   - component: {fileID: 1170861872}
   - component: {fileID: 1170861870}
-  - component: {fileID: 1170861871}
-  - component: {fileID: 1170861876}
   - component: {fileID: 1170861878}
   - component: {fileID: 1170861877}
+  - component: {fileID: 1170861876}
+  - component: {fileID: 1170861871}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -904,7 +904,7 @@ MonoBehaviour:
   index: 0
   maxIndex: 3
   playerId: 0
-  scene: Controls
+  scene: Inventory
   audioSource: {fileID: 0}
 --- !u!114 &1170861872
 MonoBehaviour:
