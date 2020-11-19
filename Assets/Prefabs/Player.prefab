@@ -186,19 +186,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5db668dc29292c840a1e090f03ebb590, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gmm: {fileID: 0}
+  gmm: {fileID: 2902402752703351315}
   playerId: 0
   speed: 0
   jumpForce: 0
   wallJumpForce: 0
-  checkGround: {fileID: 0}
+  checkGround: {fileID: 1124337528287181258}
   isGround:
     serializedVersion: 2
-    m_Bits: 0
-  checkWallJump: {fileID: 0}
+    m_Bits: 256
+  checkWallJump: {fileID: 1724279003642963566}
   isWallJump:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
 --- !u!1 &2902402753435174782
 GameObject:
   m_ObjectHideFlags: 0
