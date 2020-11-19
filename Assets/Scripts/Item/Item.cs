@@ -35,6 +35,7 @@ public class Item
 		if(itemType == 0)
         {
 			EquipmentManager.instance.Equip(this);
+			Debug.Log(name);
 			RemoveFromInventory();
 		}
 	}

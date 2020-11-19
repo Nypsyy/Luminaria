@@ -10,7 +10,6 @@ public class ItemPickUp : Interactable
 	public override void Interact()
 	{
 		base.Interact();
-		Debug.Log("PickUp");
 
 		PickUp();   // Pick it up!
 	}
