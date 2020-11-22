@@ -8,7 +8,7 @@ public class EquipmentUI : MonoBehaviour
 	public GameObject characterUI;
 
 	EquipmentManager equipmentManager;    // Our current equipment
-
+	private GamemodeManager gmm;
 
 	void Start()
 	{
