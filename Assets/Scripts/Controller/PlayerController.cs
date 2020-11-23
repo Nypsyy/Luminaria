@@ -18,10 +18,9 @@ public class PlayerController : MonoBehaviour
         public bool closeInventory;
     }
 
+    [SerializeField] private int playerId = 0;
     [Header("External scripts")]
     [SerializeField] private GamemodeManager gmm;
-    [Space]
-    [SerializeField] private int playerId = 0;
     [Header("Mobility")]
     [SerializeField] public float speed;
     [SerializeField] float jumpForce;
@@ -34,6 +33,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] LayerMask isWallJump;
 
     Player player;
+    PlayerCharacter character;
     ControllerMapEnabler controllerMapEnabler;
     WorldExplorationInput we;
     InventoryInput inv;
@@ -51,6 +51,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         player = ReInput.players.GetPlayer(playerId);
+        character = GetComponent<PlayerCharacter>();
         rb2D = GetComponent<Rigidbody2D>();
         controllerMapEnabler = player.controllers.maps.mapEnabler;
 
@@ -144,10 +145,13 @@ public class PlayerController : MonoBehaviour
         controllerMapEnabler.Apply();
     }
 
-    /*private void OnDrawGizmos()
+    private void OnCollisionStay2D(Collision2D collision)
     {
-        Gizmos.DrawSphere(checkWallJump.position, wallJumpRadius);
-    }*/
+        //Gizmos.DrawSphere(checkWallJump.position, wallJumpRadius);
+
+        if (collision.gameObject.tag == "Ennemy")
+            character.TakeDamage(1);
+    }
 
     private void Flip()
     {
