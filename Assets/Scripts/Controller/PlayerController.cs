@@ -39,6 +39,7 @@ public class PlayerController : MonoBehaviour
     InventoryInput inv;
     bool isGrounded;
     bool isWalled;
+    bool isFacingRight = true;
     bool control;
     bool platformSpell;
     const float groundRadius = .2f;
@@ -67,6 +68,16 @@ public class PlayerController : MonoBehaviour
         if (control)
             rb2D.velocity = new Vector2(we.moveHorizontal * speed * Time.fixedDeltaTime * 10f, rb2D.velocity.y);
         isGrounded = isWalled = false;
+
+        if(we.moveHorizontal > 0  && !isFacingRight)
+        {
+            Flip();
+        }
+
+        else if (we.moveHorizontal < 0 && isFacingRight)
+        {
+            Flip();
+        }
 
         Collider2D[] groundColliders = Physics2D.OverlapCircleAll(checkGround.position, groundRadius, isGround);
         for (int i = 0; i < groundColliders.Length; i++)
@@ -137,4 +148,12 @@ public class PlayerController : MonoBehaviour
     {
         Gizmos.DrawSphere(checkWallJump.position, wallJumpRadius);
     }*/
+
+    private void Flip()
+    {
+        // Switch the way the player is labelled as facing.
+        isFacingRight = !isFacingRight;
+
+        transform.Rotate(0f, 180f, 0f);
+    }
 }
