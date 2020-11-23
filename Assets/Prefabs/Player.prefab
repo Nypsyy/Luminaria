@@ -132,7 +132,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.12425256}
+  m_Offset: {x: -0.000000014901161, y: 0.12425256}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -143,7 +143,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.46, y: 0.7825308}
+  m_Size: {x: 0.43, y: 0.7825308}
   m_EdgeRadius: 0
 --- !u!58 &1655474520
 CircleCollider2D:
@@ -154,13 +154,13 @@ CircleCollider2D:
   m_GameObject: {fileID: 2902402752703351318}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 5dc334b8044c43b4ba2dfa9f2ae8aab5, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.29}
   serializedVersion: 2
-  m_Radius: 0.23
+  m_Radius: 0.21
 --- !u!114 &2902402752703351315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,8 +186,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5db668dc29292c840a1e090f03ebb590, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gmm: {fileID: 2902402752703351315}
   playerId: 0
+  gmm: {fileID: 2902402752703351315}
   speed: 0
   jumpForce: 0
   wallJumpForce: 0

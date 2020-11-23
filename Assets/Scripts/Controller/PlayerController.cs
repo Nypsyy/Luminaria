@@ -25,9 +25,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public float speed;
     [SerializeField] float jumpForce;
     [SerializeField] float wallJumpForce;
+    [SerializeField] float knockbackForce;
+
     [Header("Ground")]
     [SerializeField] Transform checkGround;
     [SerializeField] LayerMask isGround;
+    [SerializeField] LayerMask isTrap;
     [Header("Wall jump")]
     [SerializeField] Transform checkWallJump;
     [SerializeField] LayerMask isWallJump;
@@ -41,14 +44,12 @@ public class PlayerController : MonoBehaviour
     bool isWalled;
     public bool isFacingRight = true;
     bool control;
-    bool platformSpell;
     const float groundRadius = .2f;
     const float wallJumpRadius = .3f;
-    Vector2 m_Velocity = Vector2.zero;
     Rigidbody2D rb2D;
     Collider2D currentWall;
 
-    private void Awake()
+    void Awake()
     {
         player = ReInput.players.GetPlayer(playerId);
         character = GetComponent<PlayerCharacter>();
@@ -58,13 +59,13 @@ public class PlayerController : MonoBehaviour
         UpdateControllerMap("WorldExploration");
     }
 
-    private void Update()
+    void Update()
     {
         GetInputs();
         ProcessInputs();
     }
 
-    private void FixedUpdate()
+    void FixedUpdate()
     {
         if (control)
             rb2D.velocity = new Vector2(we.moveHorizontal * speed * Time.fixedDeltaTime * 10f, rb2D.velocity.y);
@@ -87,14 +88,31 @@ public class PlayerController : MonoBehaviour
                 isGrounded = true;
                 control = true;
             }
-
-        currentWall = Physics2D.OverlapCircle(checkWallJump.position, wallJumpRadius, isWallJump);
-        if (currentWall != null)
-            if (currentWall.gameObject != gameObject)
-                isWalled = true;
+        if (CheckOverlap(checkGround.position, groundRadius, isGround))
+        {
+            isGrounded = true;
+            control = true;
+        }
+        if (CheckOverlap(checkWallJump.position, wallJumpRadius, isWallJump))
+        {
+            isWalled = true;
+        }
+        if (CheckOverlap(checkGround.position, groundRadius, isTrap))
+        {
+            character.TakeDamage(2);
+        }
     }
 
-    public void WallJump()
+    bool CheckOverlap(Vector3 position, float radius, LayerMask layerMask)
+    {
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(position, radius, layerMask);
+        for (int i = 0; i < colliders.Length; i++)
+            if (colliders[i].gameObject != gameObject)
+                return true;
+        return false;
+    }
+
+    void WallJump()
     {
         if (currentWall.transform.position.x < gameObject.transform.position.x)
             rb2D.velocity = new Vector2(wallJumpForce, wallJumpForce * 1.5f);
@@ -102,7 +120,15 @@ public class PlayerController : MonoBehaviour
             rb2D.velocity = new Vector2(-wallJumpForce, wallJumpForce * 1.5f);
     }
 
-    private void GetInputs()
+    public void DoKnockback(float position)
+    {
+        if (position < transform.position.x)
+            rb2D.AddForce(new Vector2(-1, .6f) * knockbackForce, ForceMode2D.Impulse);
+        else
+            rb2D.AddForce(new Vector2(1, .6f) * knockbackForce, ForceMode2D.Impulse);
+    }
+
+    void GetInputs()
     {
         inv.closeInventory = player.GetButtonDown("Close UI");
         we.jump = player.GetButtonDown("Jump");
@@ -110,7 +136,7 @@ public class PlayerController : MonoBehaviour
         we.moveHorizontal = player.GetAxisRaw("Move Horizontal");
     }
 
-    private void ProcessInputs()
+    void ProcessInputs()
     {
         if (we.jump)
         {
@@ -137,7 +163,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void UpdateControllerMap(string rsTag)
+    void UpdateControllerMap(string rsTag)
     {
         foreach (ControllerMapEnabler.RuleSet rs in controllerMapEnabler.ruleSets)
             rs.enabled = false;
@@ -145,12 +171,14 @@ public class PlayerController : MonoBehaviour
         controllerMapEnabler.Apply();
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
+    void OnCollisionStay2D(Collision2D collision)
     {
-        //Gizmos.DrawSphere(checkWallJump.position, wallJumpRadius);
-
-        if (collision.gameObject.tag == "Ennemy")
-            character.TakeDamage(1);
+        switch (collision.gameObject.tag)
+        {
+            case "Ennemy":
+                character.TakeDamage(1, collision.transform.position.x);
+                break;
+        }
     }
 
     public void Flip()

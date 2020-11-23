@@ -11,4 +11,10 @@ namespace Luminaria
         CHARACTER_OPEN,
         ABILITY_OPEN
     }
+
+    public enum Layers
+    {
+        GROUND = 8,
+        WALL_JUMP = 9
+    }
 }
