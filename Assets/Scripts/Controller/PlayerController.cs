@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
     InventoryInput inv;
     bool isGrounded;
     bool isWalled;
-    bool isFacingRight = true;
+    public bool isFacingRight = true;
     bool control;
     bool platformSpell;
     const float groundRadius = .2f;
@@ -153,7 +153,7 @@ public class PlayerController : MonoBehaviour
             character.TakeDamage(1);
     }
 
-    private void Flip()
+    public void Flip()
     {
         // Switch the way the player is labelled as facing.
         isFacingRight = !isFacingRight;
