@@ -7,6 +7,7 @@ public class Spell : MonoBehaviour
     public Transform firePoint;
     public PlayerController playerController;
     public GameObject fireSpellPrefab;
+    public GameObject abilityUI;
 
     Vector3 mousePosition;
     Vector3 direction;
@@ -14,14 +15,13 @@ public class Spell : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-
         if (Input.GetButtonDown("Fire1"))
         {
-            Shoot();
+            if(!abilityUI.activeSelf)
+            {
+                Shoot();
+            }
         }
-
-        Debug.Log(transform.forward);
     }
 
     void Shoot()
