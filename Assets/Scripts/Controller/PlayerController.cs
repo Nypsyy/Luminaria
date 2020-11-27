@@ -20,7 +20,6 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private int playerId = 0;
     [Header("External scripts")]
-    [SerializeField] private GamemodeManager gmm;
     [Header("Mobility")]
     [SerializeField] public float speed;
     [SerializeField] float jumpForce;
@@ -67,27 +66,16 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (control)
-            rb2D.velocity = new Vector2(we.moveHorizontal * speed * Time.fixedDeltaTime * 10f, rb2D.velocity.y);
         isGrounded = isWalled = false;
 
-        if(we.moveHorizontal > 0  && !isFacingRight)
-        {
-            Flip();
-        }
+        if (control)
+            rb2D.velocity = new Vector2(we.moveHorizontal * speed * Time.fixedDeltaTime * 10f, rb2D.velocity.y);
 
+        if (we.moveHorizontal > 0 && !isFacingRight)
+            Flip();
         else if (we.moveHorizontal < 0 && isFacingRight)
-        {
             Flip();
-        }
 
-        Collider2D[] groundColliders = Physics2D.OverlapCircleAll(checkGround.position, groundRadius, isGround);
-        for (int i = 0; i < groundColliders.Length; i++)
-            if (groundColliders[i].gameObject != gameObject)
-            {
-                isGrounded = true;
-                control = true;
-            }
         if (CheckOverlap(checkGround.position, groundRadius, isGround))
         {
             isGrounded = true;
@@ -96,10 +84,6 @@ public class PlayerController : MonoBehaviour
         if (CheckOverlap(checkWallJump.position, wallJumpRadius, isWallJump))
         {
             isWalled = true;
-        }
-        if (CheckOverlap(checkGround.position, groundRadius, isTrap))
-        {
-            character.TakeDamage(2);
         }
     }
 
@@ -120,12 +104,12 @@ public class PlayerController : MonoBehaviour
             rb2D.velocity = new Vector2(-wallJumpForce, wallJumpForce * 1.5f);
     }
 
-    public void DoKnockback(float position)
+    public void DoKnockback()
     {
-        if (position < transform.position.x)
-            rb2D.AddForce(new Vector2(-1, .6f) * knockbackForce, ForceMode2D.Impulse);
+        if (isFacingRight)
+            rb2D.velocity = new Vector2(-1, 1) * knockbackForce;
         else
-            rb2D.AddForce(new Vector2(1, .6f) * knockbackForce, ForceMode2D.Impulse);
+            rb2D.velocity = Vector2.one * knockbackForce;
     }
 
     void GetInputs()
@@ -154,12 +138,12 @@ public class PlayerController : MonoBehaviour
         if (we.openInventory)
         {
             UpdateControllerMap("Inventory");
-            gmm.state = Gamemode.INVENTORY_OPEN;
+            GamemodeManager.instance.state = Gamemode.INVENTORY_OPEN;
         }
         if (inv.closeInventory)
         {
             UpdateControllerMap("WorldExploration");
-            gmm.state = Gamemode.WORLD_EXPLORATION;
+            GamemodeManager.instance.state = Gamemode.WORLD_EXPLORATION;
         }
     }
 
@@ -171,21 +155,21 @@ public class PlayerController : MonoBehaviour
         controllerMapEnabler.Apply();
     }
 
-    void OnCollisionStay2D(Collision2D collision)
-    {
-        switch (collision.gameObject.tag)
-        {
-            case "Ennemy":
-                character.TakeDamage(1, collision.transform.position.x);
-                break;
-        }
-    }
-
     public void Flip()
     {
         // Switch the way the player is labelled as facing.
         isFacingRight = !isFacingRight;
 
         transform.Rotate(0f, 180f, 0f);
+    }
+
+    void OnCollisionStay2D(Collision2D other)
+    {
+        switch (other.gameObject.tag)
+        {
+            case "Ennemy":
+                character.TakeDamage(1);
+                break;
+        }
     }
 }

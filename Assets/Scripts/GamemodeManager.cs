@@ -19,4 +19,5 @@ public class GamemodeManager : MonoBehaviour
     #endregion 
 
     public Gamemode state;
+    public Transform[] spawnPoints;
 }

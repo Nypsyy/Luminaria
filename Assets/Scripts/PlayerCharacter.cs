@@ -18,14 +18,25 @@ public class PlayerCharacter : MonoBehaviour
         controller = GetComponent<PlayerController>();
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(currentHealth);
-        Debug.Log(healthBar.slider.value);
     }
 
-    public void TakeDamage(int damage, bool facingRight)
+    void Update()
+    {
+        if (currentHealth <= 0)
+            Die();
+    }
+
+    void Die()
+    {
+        Debug.Log("T'es mort");
+    }
+
+
+    public void TakeDamage(int damage)
     {
         if (!invincible)
         {
-            controller.DoKnockback(facingRight);
+            controller.DoKnockback();
             currentHealth -= damage;
             healthBar.SetHealth(currentHealth);
             StartCoroutine(Invincible());
