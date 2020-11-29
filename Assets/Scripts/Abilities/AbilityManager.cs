@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class AbilityManager : MonoBehaviour
@@ -11,6 +12,11 @@ public class AbilityManager : MonoBehaviour
     public AbilityButton[] abilityButtons;
 
     public Ability activateButton;
+
+    public int abilityMaxLevel = 15;
+    public int abilityCurrentLevel = 0;
+
+    public Text textLevel;
 
     GameObject children;
     TextMeshProUGUI text;

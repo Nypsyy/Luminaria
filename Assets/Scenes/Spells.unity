@@ -173,6 +173,9 @@ MonoBehaviour:
   playerController: {fileID: 54454928}
   fireSpellPrefab: {fileID: 687050921662306953, guid: 90b957144d410004ab5de80226e172d7,
     type: 3}
+  iceSpellPrefab: {fileID: 2322428236120623337, guid: 9a55401176851854d9600fef05331403,
+    type: 3}
+  abilityUI: {fileID: 1151671660}
 --- !u!1 &68157069
 GameObject:
   m_ObjectHideFlags: 0
@@ -563,7 +566,8 @@ MonoBehaviour:
   abilityName: Velvet Mind
   abilitySprite: {fileID: 21300000, guid: f2fbad63c42301640a9489f0c1c05873, type: 3}
   abilityDesc: Velvet Mind
-  previousAbility: []
+  previousAbility:
+  - {fileID: 1492045161}
   abilityLevel: 0
 --- !u!114 &146024273
 MonoBehaviour:
@@ -986,6 +990,9 @@ MonoBehaviour:
   - {fileID: 399557497}
   - {fileID: 454085495}
   activateButton: {fileID: 0}
+  abilityMaxLevel: 16
+  abilityCurrentLevel: 0
+  textLevel: {fileID: 1727451494}
 --- !u!4 &275492186
 Transform:
   m_ObjectHideFlags: 0
@@ -1058,7 +1065,8 @@ MonoBehaviour:
   abilityName: Experienced Scholar
   abilitySprite: {fileID: 21300000, guid: 0b17b5cc7c484d140bf6d0cebf0ec067, type: 3}
   abilityDesc: Experienced Scholar
-  previousAbility: []
+  previousAbility:
+  - {fileID: 1228695511}
   abilityLevel: 0
 --- !u!114 &343960535
 MonoBehaviour:
@@ -1306,7 +1314,8 @@ MonoBehaviour:
   abilityName: Pumping Blood
   abilitySprite: {fileID: 21300000, guid: 1c4a4e287d6ea36469c3722c274bb2f3, type: 3}
   abilityDesc: Pumping Blood
-  previousAbility: []
+  previousAbility:
+  - {fileID: 2082485025}
   abilityLevel: 0
 --- !u!114 &376236953
 MonoBehaviour:
@@ -1677,7 +1686,8 @@ MonoBehaviour:
   abilityName: Burning Bull
   abilitySprite: {fileID: 21300000, guid: 7cbc68ee2060466479a9129f3972dc03, type: 3}
   abilityDesc: Burning Bull
-  previousAbility: []
+  previousAbility:
+  - {fileID: 343960534}
   abilityLevel: 0
 --- !u!114 &399557495
 MonoBehaviour:
@@ -2263,7 +2273,10 @@ MonoBehaviour:
   abilityName: Armageddon
   abilitySprite: {fileID: 21300000, guid: 423b7a3d946047245ba153c9536d4cf4, type: 3}
   abilityDesc: Armageddon
-  previousAbility: []
+  previousAbility:
+  - {fileID: 999441360}
+  - {fileID: 809448236}
+  - {fileID: 399557494}
   abilityLevel: 0
 --- !u!114 &454085493
 MonoBehaviour:
@@ -2973,7 +2986,10 @@ MonoBehaviour:
   abilityName: Firestorm
   abilitySprite: {fileID: 21300000, guid: d14da510e487b3e4482e03e9906ce88d, type: 3}
   abilityDesc: Firestorm
-  previousAbility: []
+  previousAbility:
+  - {fileID: 376236952}
+  - {fileID: 2094704510}
+  - {fileID: 1228695511}
   abilityLevel: 0
 --- !u!114 &535220802
 MonoBehaviour:
@@ -4315,7 +4331,8 @@ MonoBehaviour:
   abilityName: Blood Spike
   abilitySprite: {fileID: 21300000, guid: 2ec33c3a48c6b1d42844bb93607b44dd, type: 3}
   abilityDesc: Blood Spike
-  previousAbility: []
+  previousAbility:
+  - {fileID: 535220801}
   abilityLevel: 0
 --- !u!114 &809448237
 MonoBehaviour:
@@ -4890,7 +4907,8 @@ MonoBehaviour:
   abilityName: Red Fang
   abilitySprite: {fileID: 21300000, guid: ca2e7fc42566a554ca2ca7c3e1fa5414, type: 3}
   abilityDesc: Red Fang
-  previousAbility: []
+  previousAbility:
+  - {fileID: 535220801}
   abilityLevel: 0
 --- !u!114 &999441361
 MonoBehaviour:
@@ -5363,7 +5381,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1151671661
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5742,7 +5760,8 @@ MonoBehaviour:
   abilityName: Enduring Health
   abilitySprite: {fileID: 21300000, guid: 2e200e1f18791ac458b88cc44711f89f, type: 3}
   abilityDesc: Enduring Health
-  previousAbility: []
+  previousAbility:
+  - {fileID: 146024272}
   abilityLevel: 0
 --- !u!114 &1228695512
 MonoBehaviour:
@@ -7134,7 +7153,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 15 / 15
+  m_Text: 
 --- !u!222 &1727451495
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8126,7 +8145,8 @@ MonoBehaviour:
   abilityName: Lava Lash
   abilitySprite: {fileID: 21300000, guid: 163a3dd806ad1264982ac29f6c35d6f3, type: 3}
   abilityDesc: Lava Lash
-  previousAbility: []
+  previousAbility:
+  - {fileID: 1492045161}
   abilityLevel: 0
 --- !u!114 &2082485026
 MonoBehaviour:
@@ -8294,7 +8314,8 @@ MonoBehaviour:
   abilityName: Molten Chains
   abilitySprite: {fileID: 21300000, guid: 0f60ede303ef7d44aa322a77c06e5c56, type: 3}
   abilityDesc: Molten Chains
-  previousAbility: []
+  previousAbility:
+  - {fileID: 2082485025}
   abilityLevel: 0
 --- !u!114 &2094704511
 MonoBehaviour:
