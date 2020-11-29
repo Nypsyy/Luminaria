@@ -20,14 +20,16 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private int playerId = 0;
     [Header("External scripts")]
-    [SerializeField] private GamemodeManager gmm;
     [Header("Mobility")]
     [SerializeField] public float speed;
     [SerializeField] float jumpForce;
     [SerializeField] float wallJumpForce;
+    [SerializeField] float knockbackForce;
+
     [Header("Ground")]
     [SerializeField] Transform checkGround;
     [SerializeField] LayerMask isGround;
+    [SerializeField] LayerMask isTrap;
     [Header("Wall jump")]
     [SerializeField] Transform checkWallJump;
     [SerializeField] LayerMask isWallJump;
@@ -41,14 +43,12 @@ public class PlayerController : MonoBehaviour
     bool isWalled;
     public bool isFacingRight = true;
     bool control;
-    bool platformSpell;
     const float groundRadius = .2f;
     const float wallJumpRadius = .3f;
-    Vector2 m_Velocity = Vector2.zero;
     Rigidbody2D rb2D;
     Collider2D currentWall;
 
-    private void Awake()
+    void Awake()
     {
         player = ReInput.players.GetPlayer(playerId);
         character = GetComponent<PlayerCharacter>();
@@ -58,43 +58,45 @@ public class PlayerController : MonoBehaviour
         UpdateControllerMap("WorldExploration");
     }
 
-    private void Update()
+    void Update()
     {
         GetInputs();
         ProcessInputs();
     }
 
-    private void FixedUpdate()
+    void FixedUpdate()
     {
-        if (control)
-            rb2D.velocity = new Vector2(we.moveHorizontal * speed * Time.fixedDeltaTime * 10f, rb2D.velocity.y);
         isGrounded = isWalled = false;
 
-        if(we.moveHorizontal > 0  && !isFacingRight)
-        {
-            Flip();
-        }
+        if (control)
+            rb2D.velocity = new Vector2(we.moveHorizontal * speed * Time.fixedDeltaTime * 10f, rb2D.velocity.y);
 
+        if (we.moveHorizontal > 0 && !isFacingRight)
+            Flip();
         else if (we.moveHorizontal < 0 && isFacingRight)
-        {
             Flip();
+
+        if (CheckOverlap(checkGround.position, groundRadius, isGround))
+        {
+            isGrounded = true;
+            control = true;
         }
-
-        Collider2D[] groundColliders = Physics2D.OverlapCircleAll(checkGround.position, groundRadius, isGround);
-        for (int i = 0; i < groundColliders.Length; i++)
-            if (groundColliders[i].gameObject != gameObject)
-            {
-                isGrounded = true;
-                control = true;
-            }
-
-        currentWall = Physics2D.OverlapCircle(checkWallJump.position, wallJumpRadius, isWallJump);
-        if (currentWall != null)
-            if (currentWall.gameObject != gameObject)
-                isWalled = true;
+        if (CheckOverlap(checkWallJump.position, wallJumpRadius, isWallJump))
+        {
+            isWalled = true;
+        }
     }
 
-    public void WallJump()
+    bool CheckOverlap(Vector3 position, float radius, LayerMask layerMask)
+    {
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(position, radius, layerMask);
+        for (int i = 0; i < colliders.Length; i++)
+            if (colliders[i].gameObject != gameObject)
+                return true;
+        return false;
+    }
+
+    void WallJump()
     {
         if (currentWall.transform.position.x < gameObject.transform.position.x)
             rb2D.velocity = new Vector2(wallJumpForce, wallJumpForce * 1.5f);
@@ -102,7 +104,15 @@ public class PlayerController : MonoBehaviour
             rb2D.velocity = new Vector2(-wallJumpForce, wallJumpForce * 1.5f);
     }
 
-    private void GetInputs()
+    public void DoKnockback()
+    {
+        if (isFacingRight)
+            rb2D.velocity = new Vector2(-1, 1) * knockbackForce;
+        else
+            rb2D.velocity = Vector2.one * knockbackForce;
+    }
+
+    void GetInputs()
     {
         inv.closeInventory = player.GetButtonDown("Close UI");
         we.jump = player.GetButtonDown("Jump");
@@ -110,7 +120,7 @@ public class PlayerController : MonoBehaviour
         we.moveHorizontal = player.GetAxisRaw("Move Horizontal");
     }
 
-    private void ProcessInputs()
+    void ProcessInputs()
     {
         if (we.jump)
         {
@@ -128,29 +138,21 @@ public class PlayerController : MonoBehaviour
         if (we.openInventory)
         {
             UpdateControllerMap("Inventory");
-            gmm.state = Gamemode.INVENTORY_OPEN;
+            GamemodeManager.instance.state = Gamemode.INVENTORY_OPEN;
         }
         if (inv.closeInventory)
         {
             UpdateControllerMap("WorldExploration");
-            gmm.state = Gamemode.WORLD_EXPLORATION;
+            GamemodeManager.instance.state = Gamemode.WORLD_EXPLORATION;
         }
     }
 
-    private void UpdateControllerMap(string rsTag)
+    void UpdateControllerMap(string rsTag)
     {
         foreach (ControllerMapEnabler.RuleSet rs in controllerMapEnabler.ruleSets)
             rs.enabled = false;
         controllerMapEnabler.ruleSets.Find(item => item.tag == rsTag).enabled = true;
         controllerMapEnabler.Apply();
-    }
-
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        //Gizmos.DrawSphere(checkWallJump.position, wallJumpRadius);
-
-        if (collision.gameObject.tag == "Ennemy")
-            character.TakeDamage(1);
     }
 
     public void Flip()
@@ -159,5 +161,15 @@ public class PlayerController : MonoBehaviour
         isFacingRight = !isFacingRight;
 
         transform.Rotate(0f, 180f, 0f);
+    }
+
+    void OnCollisionStay2D(Collision2D other)
+    {
+        switch (other.gameObject.tag)
+        {
+            case "Ennemy":
+                character.TakeDamage(1);
+                break;
+        }
     }
 }

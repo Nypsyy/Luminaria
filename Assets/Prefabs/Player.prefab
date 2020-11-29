@@ -72,8 +72,9 @@ GameObject:
   - component: {fileID: 2902402752703351313}
   - component: {fileID: 1655474521}
   - component: {fileID: 1655474520}
-  - component: {fileID: 2902402752703351315}
   - component: {fileID: 2252681619978876243}
+  - component: {fileID: 6521132894107765979}
+  - component: {fileID: 3847086114577777169}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -132,7 +133,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.12425256}
+  m_Offset: {x: -0.000000014901161, y: 0.12425256}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -143,7 +144,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.46, y: 0.7825308}
+  m_Size: {x: 0.43, y: 0.7825308}
   m_EdgeRadius: 0
 --- !u!58 &1655474520
 CircleCollider2D:
@@ -154,26 +155,13 @@ CircleCollider2D:
   m_GameObject: {fileID: 2902402752703351318}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 5dc334b8044c43b4ba2dfa9f2ae8aab5, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.29}
   serializedVersion: 2
-  m_Radius: 0.23
---- !u!114 &2902402752703351315
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2902402752703351318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2756f23b7b8f6814eb5c0b8a70227526, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  state: 0
+  m_Radius: 0.21
 --- !u!114 &2252681619978876243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,19 +174,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5db668dc29292c840a1e090f03ebb590, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gmm: {fileID: 2902402752703351315}
   playerId: 0
   speed: 0
   jumpForce: 0
   wallJumpForce: 0
+  knockbackForce: 0
   checkGround: {fileID: 1124337528287181258}
   isGround:
     serializedVersion: 2
     m_Bits: 256
+  isTrap:
+    serializedVersion: 2
+    m_Bits: 1024
   checkWallJump: {fileID: 1724279003642963566}
   isWallJump:
     serializedVersion: 2
     m_Bits: 512
+  isFacingRight: 1
+--- !u!114 &6521132894107765979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2902402752703351318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a85d4b1468c79124c9e213a72465bd10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 8
+  currentHealth: 0
+  healthBar: {fileID: 0}
+--- !u!114 &3847086114577777169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2902402752703351318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f737e4de2fafa99438854ee88cb06cb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawnPoint: {fileID: 0}
 --- !u!1 &2902402753435174782
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,7 +230,7 @@ GameObject:
   - component: {fileID: 2902402753435174783}
   - component: {fileID: 2902402753435174778}
   m_Layer: 0
-  m_Name: Main
+  m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

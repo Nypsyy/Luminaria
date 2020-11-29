@@ -10,19 +10,33 @@ public class PlayerCharacter : MonoBehaviour
 
     public HealthBar healthBar;
 
+    PlayerController controller;
     bool invincible;
 
     void Start()
     {
+        controller = GetComponent<PlayerController>();
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(currentHealth);
-        Debug.Log(healthBar.slider.value);
     }
+
+    void Update()
+    {
+        if (currentHealth <= 0)
+            Die();
+    }
+
+    void Die()
+    {
+        Debug.Log("T'es mort");
+    }
+
 
     public void TakeDamage(int damage)
     {
         if (!invincible)
         {
+            controller.DoKnockback();
             currentHealth -= damage;
             healthBar.SetHealth(currentHealth);
             StartCoroutine(Invincible());
