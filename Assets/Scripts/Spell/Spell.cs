@@ -26,7 +26,7 @@ public class Spell : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            if(!abilityUI.activeSelf)
+            if (!abilityUI.activeSelf)
             {
                 Shoot();
             }
@@ -53,7 +53,7 @@ public class Spell : MonoBehaviour
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
         direction = mousePosition - transform.position;
 
-        if((playerController.isFacingRight && direction.x < 0) || (!playerController.isFacingRight && direction.x > 0))
+        if ((playerController.isFacingRight && direction.x < 0) || (!playerController.isFacingRight && direction.x > 0))
         {
             playerController.Flip();
         }
