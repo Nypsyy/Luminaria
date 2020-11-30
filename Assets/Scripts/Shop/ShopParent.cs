@@ -7,7 +7,7 @@ public class ShopParent : MonoBehaviour
     public List<ItemPickUp> itemPickUps = new List<ItemPickUp>();
     public GameObject shopUI;
 
-    List<Item> items = new List<Item>();
+    public List<Item> items = new List<Item>();
 
     bool playerNearby;
     bool isShoploaded;
@@ -22,6 +22,11 @@ public class ShopParent : MonoBehaviour
         {
             shopUI.SetActive(true);
             if(!isShoploaded) loadShop();
+
+            if (Shop.instance.onItemBoughtCallback != null)
+            {
+                Shop.instance.onItemBoughtCallback.Invoke();
+            }
         }
 
         if (Input.GetKeyUp(KeyCode.Escape) && playerNearby)
@@ -34,8 +39,6 @@ public class ShopParent : MonoBehaviour
 
     public void loadShop()
     {
-        Shop.instance.shopItems.Clear();
-
         Shop.instance.shopItems = items;
         
         if (Shop.instance.onItemBoughtCallback != null)
@@ -57,7 +60,7 @@ public class ShopParent : MonoBehaviour
     }
 
 
-    public void OnCollisionEnter2D(Collision2D collision)
+    public void OnCollisionStay2D(Collision2D collision)
     {
         playerNearby = true;
         
