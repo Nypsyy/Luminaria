@@ -18,10 +18,13 @@ public class MenuButtonController : MonoBehaviour
 
     // Use this for initialization
     public int index;
+    public AudioSource buttonSounds;
+
     [SerializeField] int maxIndex;
-    [SerializeField] private int playerId = 0;
-    [SerializeField] private string scene;
-    public AudioSource audioSource;
+    [SerializeField] int playerId = 0;
+    [SerializeField] string scene;
+    [SerializeField] LevelLoader levelLoader;
+    [SerializeField] Animator musicTransition;
 
     private Player player;
     public MenuInput menu;
@@ -31,7 +34,6 @@ public class MenuButtonController : MonoBehaviour
     void Awake()
     {
         player = ReInput.players.GetPlayer(playerId);
-        audioSource = GetComponent<AudioSource>();
         mouse = player.controllers.Mouse;
 
         foreach (ControllerMapEnabler.RuleSet rs in player.controllers.maps.mapEnabler.ruleSets)
@@ -74,9 +76,10 @@ public class MenuButtonController : MonoBehaviour
             switch (index)
             {
                 case 0:
+                    levelLoader.LoadNextLevel();
+                    musicTransition.SetTrigger("Fade");
                     return;
                 case 1:
-                    Continue();
                     return;
                 case 2:
                     return;
@@ -84,10 +87,5 @@ public class MenuButtonController : MonoBehaviour
                     Application.Quit();
                     return;
             }
-    }
-
-    void Continue()
-    {
-        SceneManager.LoadScene(scene);
     }
 }

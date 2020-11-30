@@ -11,7 +11,7 @@ public class FireSpell : MonoBehaviour
     public GameObject impactEffet;
 
     Vector3 mousePosition;
-    Vector3 direction;
+    Vector2 direction;
 
     void Start()
     {
@@ -22,18 +22,15 @@ public class FireSpell : MonoBehaviour
         rb.velocity = direction.normalized * speed;
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        Dummy dummy = collision.GetComponent<Dummy>();
-        if(dummy !=  null)
+        if (other.gameObject.tag == "Ennemy")
         {
-            dummy.TakeDamage(damage);
+            EnnemyBehavior ennemy = other.gameObject.GetComponent<EnnemyBehavior>();
+            ennemy.TakeDamage(damage);
 
+            Instantiate(impactEffet, transform.position, transform.rotation);
+            Destroy(gameObject);
         }
-
-        Instantiate(impactEffet, transform.position, transform.rotation);
-        Destroy(gameObject);    
     }
-
-
 }

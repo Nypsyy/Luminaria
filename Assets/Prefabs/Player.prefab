@@ -207,10 +207,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerId: 0
-  speed: 30
+  speed: 25
   jumpForce: 13
-  wallJumpForce: 8
-  knockbackForce: 0
+  wallJumpForce: 13
+  knockbackForce: 10
   checkGround: {fileID: 1124337528287181258}
   isGround:
     serializedVersion: 2
@@ -235,9 +235,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a85d4b1468c79124c9e213a72465bd10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  invincinbilityDelay: 1
+  blinkNumber: 6
+  sprite: {fileID: 2902402753435174782}
   maxHealth: 8
-  currentHealth: 0
+  currentHealth: 8
   healthBar: {fileID: 0}
+  isDead: 0
 --- !u!114 &3847086114577777169
 MonoBehaviour:
   m_ObjectHideFlags: 0
