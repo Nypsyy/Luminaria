@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using Luminaria;
+using TMPro;
 
 /* This object updates the inventory UI. */
 
@@ -7,6 +8,7 @@ public class InventoryUI : MonoBehaviour
 {
     public Transform itemsParent;   // The parent object of all the items
     public GameObject inventoryUI;  // The entire UI
+    public TextMeshProUGUI text;
 
     Inventory inventory;    // Our current inventory
     private GamemodeManager gmm;
@@ -19,17 +21,20 @@ public class InventoryUI : MonoBehaviour
 
     void Update()
     {
-        if (gmm.state == Gamemode.INVENTORY_OPEN)
+        if (Input.GetKeyDown(KeyCode.T))
         {
             inventoryUI.SetActive(!inventoryUI.activeSelf);
             UpdateUI();
         }
+
+        if(Input.GetKeyDown(KeyCode.L))
+        {
+            inventory.AddCurrency(50);
+        }
+
+        text.text = inventory.GetCurrency().ToString();
     }
 
-    // Update the inventory UI by:
-    //		- Adding items
-    //		- Clearing empty slots
-    // This is called using a delegate on the Inventory.
     void UpdateUI()
     {
         InventorySlot[] slots = GetComponentsInChildren<InventorySlot>();
@@ -48,6 +53,4 @@ public class InventoryUI : MonoBehaviour
             }
         }
     }
-
-
 }

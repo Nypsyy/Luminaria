@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &546237826
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 546237827}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &546237827
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546237826}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.385, y: 0.158, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2902402752703351319}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1215108282856848613
 GameObject:
   m_ObjectHideFlags: 0
@@ -24,7 +54,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1215108282856848613}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.07, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2902402752703351319}
@@ -75,6 +105,7 @@ GameObject:
   - component: {fileID: 2252681619978876243}
   - component: {fileID: 6521132894107765979}
   - component: {fileID: 3847086114577777169}
+  - component: {fileID: 54454934}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -96,6 +127,7 @@ Transform:
   - {fileID: 2902402753435174783}
   - {fileID: 1124337528287181258}
   - {fileID: 1724279003642963566}
+  - {fileID: 546237827}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -175,9 +207,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerId: 0
-  speed: 0
-  jumpForce: 0
-  wallJumpForce: 0
+  speed: 30
+  jumpForce: 13
+  wallJumpForce: 8
   knockbackForce: 0
   checkGround: {fileID: 1124337528287181258}
   isGround:
@@ -219,6 +251,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawnPoint: {fileID: 0}
+--- !u!114 &54454934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2902402752703351318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d12380abeb887646a27d52989cac040, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePoint: {fileID: 546237827}
+  playerController: {fileID: 2252681619978876243}
+  fireSpellPrefab: {fileID: 687050921662306953, guid: 90b957144d410004ab5de80226e172d7,
+    type: 3}
+  iceSpellPrefab: {fileID: 2322428236120623337, guid: 9a55401176851854d9600fef05331403,
+    type: 3}
+  abilityUI: {fileID: 0}
 --- !u!1 &2902402753435174782
 GameObject:
   m_ObjectHideFlags: 0

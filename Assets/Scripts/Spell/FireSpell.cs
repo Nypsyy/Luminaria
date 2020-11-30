@@ -19,13 +19,11 @@ public class FireSpell : MonoBehaviour
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
 
         direction = mousePosition - transform.position;
-        rb.velocity = direction * speed;
+        rb.velocity = direction.normalized * speed;
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.name);
-
         Dummy dummy = collision.GetComponent<Dummy>();
         if(dummy !=  null)
         {

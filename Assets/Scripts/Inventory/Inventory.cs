@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-
     #region Singleton
 
     public static Inventory instance;
@@ -22,46 +21,45 @@ public class Inventory : MonoBehaviour
 
     #endregion
 
-    // Callback which is triggered when
-    // an item gets added/removed.
     public delegate void OnItemChanged();
     public OnItemChanged onItemChangedCallback;
 
-    public int space = 20;  // Amount of slots in inventory
-
-    // Current list of items in inventory
+    public int space = 10;  
     public List<Item> items = new List<Item>();
 
-    // Add a new item. If there is enough room we
-    // return true. Else we return false.
+    int currency = 0;
+
     public bool Add(Item item)
     {
-
-        // Check if out of space
         if (items.Count >= space)
         {
             Debug.Log("Not enough room.");
             return false;
         }
 
-        items.Add(item);    // Add item to list
+        items.Add(item); 
 
-        // Trigger callback
         if (onItemChangedCallback != null)
         {
             onItemChangedCallback.Invoke();
         }
-
-
         return true;
     }
 
-    // Remove an item
+    public void AddCurrency(int amount)
+    {
+        currency += amount;
+    }
+
+    public int GetCurrency()
+    {
+        return currency;
+    }
+
     public void Remove(Item item)
     {
-        items.Remove(item);     // Remove item from list
+        items.Remove(item); 
 
-        // Trigger callback
         if (onItemChangedCallback != null)
             onItemChangedCallback.Invoke();
     }

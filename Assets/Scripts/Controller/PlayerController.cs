@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Rewired;
 using Luminaria;
+using TMPro;    
 
 public class PlayerController : MonoBehaviour
 {
@@ -33,6 +34,10 @@ public class PlayerController : MonoBehaviour
     [Header("Wall jump")]
     [SerializeField] Transform checkWallJump;
     [SerializeField] LayerMask isWallJump;
+
+    [Header("Interact")]
+    [SerializeField] public GameObject interactUI;
+    [SerializeField] public TextMeshProUGUI text;
 
     Player player;
     PlayerCharacter character;
@@ -171,5 +176,33 @@ public class PlayerController : MonoBehaviour
                 character.TakeDamage(1);
                 break;
         }
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        switch (other.gameObject.tag)
+        {
+            case "ItemPickUp":
+                {
+                    text.text = "E - Pick up";
+                    Debug.Log("Item");
+
+                    interactUI.SetActive(true);
+                }
+                break;
+
+            case "Vendor":
+                {
+                    text.text = "E - Shop";
+                    Debug.Log("Vendor");
+                    interactUI.SetActive(true);
+                }
+                break;
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        interactUI.SetActive(false);
     }
 }

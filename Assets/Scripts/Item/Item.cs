@@ -16,6 +16,8 @@ public class Item
 	public int defenseModifier;
 	public int damageModifier;
 
+	public int price;
+
 	public enum ItemType
     {
 		Equipment,
@@ -32,10 +34,9 @@ public class Item
 
 	public virtual void Use()
     {
-		if(itemType == 0)
+		if(itemType == ItemType.Equipment)
         {
 			EquipmentManager.instance.Equip(this);
-			Debug.Log(name);
 			RemoveFromInventory();
 		}
 	}
@@ -44,6 +45,17 @@ public class Item
 	{
 		Inventory.instance.Remove(this);
 	}
+	public virtual void Buy()
+    {
+		if (price <= Inventory.instance.GetCurrency())
+		{
+			Inventory.instance.Add(this);
+			RemoveFromShop();
+		}
+    }
 
-    
+	public virtual void RemoveFromShop()
+    {
+		Shop.instance.Remove(this);
+    }
 }

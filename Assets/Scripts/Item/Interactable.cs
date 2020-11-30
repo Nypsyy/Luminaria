@@ -8,7 +8,8 @@
 
 public class Interactable : MonoBehaviour
 {
-
+	public GameObject interactable;
+	public bool interact;
 	public virtual void Interact()
 	{
 		// This method is meant to be overwritten
@@ -17,12 +18,21 @@ public class Interactable : MonoBehaviour
 
 	void Update()
 	{
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+			interact = true;
+        }
 		
+		if (Input.GetKeyUp(KeyCode.E))
+        {
+			interact = false;
+        }
 	}
 
-    public void OnCollisionEnter2D(Collision2D collision)
+    public void OnCollisionStay2D(Collision2D collision)
     {
-        Interact();
+		if(interactable.activeSelf && interact)
+			Interact();
     }
 
 }

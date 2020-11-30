@@ -19,7 +19,7 @@ public class IceSpell : MonoBehaviour
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
 
         direction = mousePosition - transform.position;
-        rb.velocity = direction * speed;
+        rb.velocity = direction.normalized * speed;
     }
 
     void OnTriggerEnter2D(Collider2D collision)
