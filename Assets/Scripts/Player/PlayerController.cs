@@ -2,24 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using Rewired;
-using Luminaria;
 
 public class PlayerController : MonoBehaviour
 {
-    struct WorldExplorationInput
-    {
-        public bool jump;
-        public bool openInventory;
-        public float moveHorizontal;
-    }
-
-    struct InventoryInput
-    {
-        public bool closeInventory;
-    }
-
-    [SerializeField] private int playerId = 0;
     [Header("Interact")]
     [SerializeField] public GameObject interactUI;
     [SerializeField] public TextMeshProUGUI text;
@@ -28,7 +13,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float jumpForce;
     [SerializeField] float wallJumpForce;
     [SerializeField] float knockbackForce;
-
     [Header("Ground")]
     [SerializeField] Transform checkGround;
     [SerializeField] LayerMask isGround;
@@ -39,11 +23,7 @@ public class PlayerController : MonoBehaviour
 
     public bool isFacingRight = true;
 
-    Player player;
     PlayerCharacter character;
-    ControllerMapEnabler controllerMapEnabler;
-    WorldExplorationInput we;
-    InventoryInput inv;
     bool isGrounded;
     bool isWalled;
     bool canControl = true;
@@ -54,18 +34,21 @@ public class PlayerController : MonoBehaviour
 
     void Awake()
     {
-        player = ReInput.players.GetPlayer(playerId);
+        PlayerInputs.instance.UpdateControllerMap("World Exploration");
+
         character = GetComponent<PlayerCharacter>();
         rb2D = GetComponent<Rigidbody2D>();
-        controllerMapEnabler = player.controllers.maps.mapEnabler;
-
-        UpdateControllerMap("WorldExploration");
     }
 
     void Update()
     {
-        GetInputs();
-        ProcessInputs();
+        if (PlayerInputs.instance.jump)
+        {
+            if (isGrounded)
+                Jump();
+            else if (isWalled)
+                WallJump();
+        }
     }
 
     void FixedUpdate()
@@ -80,30 +63,21 @@ public class PlayerController : MonoBehaviour
         isGrounded = isWalled = false;
 
         if (canControl)
-            rb2D.velocity = new Vector2(we.moveHorizontal * speed * Time.fixedDeltaTime * 10f, rb2D.velocity.y);
+            rb2D.velocity = new Vector2(PlayerInputs.instance.moveHorizontal * speed * Time.fixedDeltaTime * 10f, rb2D.velocity.y);
 
-        if (we.moveHorizontal > 0 && !isFacingRight)
+        if (PlayerInputs.instance.moveHorizontal > 0 && !isFacingRight)
             Flip();
-        else if (we.moveHorizontal < 0 && isFacingRight)
+        else if (PlayerInputs.instance.moveHorizontal < 0 && isFacingRight)
             Flip();
 
-        if (CheckOverlap(checkGround.position, groundRadius, isGround))
-        {
-            isGrounded = true;
-        }
-        if (CheckOverlap(checkWallJump.position, wallJumpRadius, isWallJump))
-        {
-            isWalled = true;
-        }
-    }
-
-    bool CheckOverlap(Vector3 position, float radius, LayerMask layerMask)
-    {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(position, radius, layerMask);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(checkGround.position, groundRadius, isGround);
         for (int i = 0; i < colliders.Length; i++)
             if (colliders[i].gameObject != gameObject)
-                return true;
-        return false;
+                isGrounded = true;
+
+        currentWall = Physics2D.OverlapCircle(checkWallJump.position, wallJumpRadius, isWallJump);
+        if (currentWall != null && currentWall.gameObject != gameObject)
+            isWalled = true;
     }
 
     void WallJump()
@@ -129,47 +103,8 @@ public class PlayerController : MonoBehaviour
         rb2D.velocity = new Vector2(xDistance * knockbackForce, 4f);
     }
 
-    void GetInputs()
-    {
-        inv.closeInventory = player.GetButtonDown("Close UI");
-        we.jump = player.GetButtonDown("Jump");
-        we.openInventory = player.GetButtonDown("Open UI");
-        we.moveHorizontal = player.GetAxisRaw("Move Horizontal");
-    }
-
-    void ProcessInputs()
-    {
-        if (we.jump)
-        {
-            if (isGrounded)
-                Jump();
-            else if (isWalled)
-                WallJump();
-        }
-
-        if (we.openInventory)
-        {
-            UpdateControllerMap("Inventory");
-            GamemodeManager.instance.state = Gamemode.INVENTORY_OPEN;
-        }
-        if (inv.closeInventory)
-        {
-            UpdateControllerMap("WorldExploration");
-            GamemodeManager.instance.state = Gamemode.WORLD_EXPLORATION;
-        }
-    }
-
-    void UpdateControllerMap(string rsTag)
-    {
-        foreach (ControllerMapEnabler.RuleSet rs in controllerMapEnabler.ruleSets)
-            rs.enabled = false;
-        controllerMapEnabler.ruleSets.Find(item => item.tag == rsTag).enabled = true;
-        controllerMapEnabler.Apply();
-    }
-
     public void Flip()
     {
-        // Switch the way the player is labelled as facing.
         isFacingRight = !isFacingRight;
 
         transform.Rotate(0f, 180f, 0f);

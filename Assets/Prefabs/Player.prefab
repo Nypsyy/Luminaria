@@ -102,6 +102,7 @@ GameObject:
   - component: {fileID: 2902402752703351313}
   - component: {fileID: 1655474521}
   - component: {fileID: 1655474520}
+  - component: {fileID: 2093164001963573077}
   - component: {fileID: 2252681619978876243}
   - component: {fileID: 6521132894107765979}
   - component: {fileID: 3847086114577777169}
@@ -194,6 +195,30 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.29}
   serializedVersion: 2
   m_Radius: 0.21
+--- !u!114 &2093164001963573077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2902402752703351318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1783e9969eb35fe4284b445a5c24e3a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerId: 0
+  menuSelect: 0
+  menuBack: 0
+  menuUp: 0
+  menuLeft: 0
+  menuDown: 0
+  menuRight: 0
+  openInventory: 0
+  closeInventory: 0
+  moveHorizontal: 0
+  jump: 0
+  castSpell: 0
 --- !u!114 &2252681619978876243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,11 +231,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5db668dc29292c840a1e090f03ebb590, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerId: 0
+  interactUI: {fileID: 0}
+  text: {fileID: 0}
   speed: 25
   jumpForce: 13
   wallJumpForce: 13
-  knockbackForce: 10
+  knockbackForce: 13
   checkGround: {fileID: 1124337528287181258}
   isGround:
     serializedVersion: 2
@@ -238,6 +264,7 @@ MonoBehaviour:
   invincinbilityDelay: 1
   blinkNumber: 6
   sprite: {fileID: 2902402753435174782}
+  respawnPoint: {fileID: 0}
   maxHealth: 8
   currentHealth: 8
   healthBar: {fileID: 0}
@@ -274,6 +301,7 @@ MonoBehaviour:
   iceSpellPrefab: {fileID: 2322428236120623337, guid: 9a55401176851854d9600fef05331403,
     type: 3}
   abilityUI: {fileID: 0}
+  player: {fileID: 2902402752703351319}
 --- !u!1 &2902402753435174782
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,24 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Rewired;
 
 public class FireSpell : MonoBehaviour
 {
     public float speed = 20f;
-    public int damage = 25;
+    public float damage = 25f;
 
     public Rigidbody2D rb;
     public GameObject impactEffet;
 
-    Vector3 mousePosition;
+    Mouse mouse;
     Vector2 direction;
 
     void Start()
     {
-        mousePosition = Input.mousePosition;
-        mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+        mouse = ReInput.controllers.Mouse;
 
-        direction = mousePosition - transform.position;
+        direction = Camera.main.ScreenToWorldPoint(mouse.screenPosition) - transform.position;
         rb.velocity = direction.normalized * speed;
     }
 

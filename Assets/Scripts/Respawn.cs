@@ -8,12 +8,12 @@ public class Respawn : MonoBehaviour
 
     void Start()
     {
-        transform.position = respawnPoint.transform.position;
+        transform.position = respawnPoint.position;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.tag == "Trap")
+        if (other.gameObject.tag == "Trap")
             transform.position = respawnPoint.transform.position;
     }
 }

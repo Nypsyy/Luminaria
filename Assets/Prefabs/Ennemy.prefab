@@ -128,7 +128,8 @@ GameObject:
   - component: {fileID: 8767038715406132731}
   - component: {fileID: 8767038715406132728}
   - component: {fileID: 8767038715406132729}
-  - component: {fileID: 8767038715406132486}
+  - component: {fileID: 2433817002989245897}
+  - component: {fileID: 8215804144747523799}
   - component: {fileID: 8767038715406132487}
   m_Layer: 0
   m_Name: Ennemy
@@ -230,8 +231,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   target: {fileID: 0}
---- !u!58 &8767038715406132486
-CircleCollider2D:
+--- !u!50 &2433817002989245897
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8767038715406132484}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!70 &8215804144747523799
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -243,9 +265,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.05}
-  serializedVersion: 2
-  m_Radius: 0.35
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.5, y: 1}
+  m_Direction: 0
 --- !u!114 &8767038715406132487
 MonoBehaviour:
   m_ObjectHideFlags: 0

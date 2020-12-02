@@ -138,3 +138,4 @@ MonoBehaviour:
   rb: {fileID: 5978187808529323798}
   impactEffet: {fileID: 1473625048454486, guid: 284f05ab582ef494a9ab1dd8bc1e76ae,
     type: 3}
+  inputs: {fileID: 2093164001963573077, guid: 29477d88d77a8b84f98c4b593825c203, type: 3}

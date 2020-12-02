@@ -6,6 +6,7 @@ namespace Luminaria
 {
     public enum Gamemode
     {
+        MENU,
         WORLD_EXPLORATION,
         INVENTORY_OPEN,
         CHARACTER_OPEN,

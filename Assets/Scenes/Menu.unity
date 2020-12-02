@@ -197,7 +197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 462285109}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &352683658
@@ -640,6 +640,10 @@ PrefabInstance:
       propertyPath: rectTransform
       value: 
       objectReference: {fileID: 911111878}
+    - target: {fileID: 1120576110, guid: 3c614e9cd35bf468b8d2f1689cc4cca8, type: 3}
+      propertyPath: inputs
+      value: 
+      objectReference: {fileID: 1577663217}
     - target: {fileID: 715450882012552304, guid: 3c614e9cd35bf468b8d2f1689cc4cca8,
         type: 3}
       propertyPath: m_Text
@@ -1132,6 +1136,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1577663216}
+  - component: {fileID: 1577663217}
   - component: {fileID: 1577663215}
   - component: {fileID: 1577663219}
   m_Layer: 0
@@ -1156,7 +1161,6 @@ MonoBehaviour:
   index: 0
   buttonSounds: {fileID: 1577663219}
   maxIndex: 3
-  playerId: 0
   scene: Inventory
   levelLoader: {fileID: 4604190422192980738}
   musicTransition: {fileID: 617378909}
@@ -1176,6 +1180,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1577663217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577663214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1783e9969eb35fe4284b445a5c24e3a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerId: 0
+  menuSelect: 0
+  menuBack: 0
+  menuUp: 0
+  menuLeft: 0
+  menuDown: 0
+  menuRight: 0
+  openUI: 0
+  closeUI: 0
+  moveHorizontal: 0
+  jump: 0
+  interract: 0
+  openMenu: 0
+  castSpell: 0
 --- !u!82 &1577663219
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1291,6 +1321,10 @@ PrefabInstance:
       propertyPath: rectTransform
       value: 
       objectReference: {fileID: 787817179}
+    - target: {fileID: 1120576110, guid: 3c614e9cd35bf468b8d2f1689cc4cca8, type: 3}
+      propertyPath: inputs
+      value: 
+      objectReference: {fileID: 1577663217}
     - target: {fileID: 715450882012552304, guid: 3c614e9cd35bf468b8d2f1689cc4cca8,
         type: 3}
       propertyPath: m_Text
@@ -1469,6 +1503,10 @@ PrefabInstance:
       propertyPath: rectTransform
       value: 
       objectReference: {fileID: 1043602729}
+    - target: {fileID: 1120576110, guid: 3c614e9cd35bf468b8d2f1689cc4cca8, type: 3}
+      propertyPath: inputs
+      value: 
+      objectReference: {fileID: 1577663217}
     - target: {fileID: 715450882012552304, guid: 3c614e9cd35bf468b8d2f1689cc4cca8,
         type: 3}
       propertyPath: m_Color.r
@@ -1798,6 +1836,10 @@ PrefabInstance:
       propertyPath: rectTransform
       value: 
       objectReference: {fileID: 1314689487}
+    - target: {fileID: 1120576110, guid: 3c614e9cd35bf468b8d2f1689cc4cca8, type: 3}
+      propertyPath: inputs
+      value: 
+      objectReference: {fileID: 1577663217}
     - target: {fileID: 715450882012552304, guid: 3c614e9cd35bf468b8d2f1689cc4cca8,
         type: 3}
       propertyPath: m_Text
