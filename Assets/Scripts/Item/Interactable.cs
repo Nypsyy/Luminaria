@@ -8,31 +8,31 @@
 
 public class Interactable : MonoBehaviour
 {
-	public GameObject interactable;
-	public bool interact;
-	public virtual void Interact()
-	{
-		// This method is meant to be overwritten
-		//Debug.Log("Interacting with " + transform.name);
-	}
+    public GameObject interactable;
+    public bool interact;
+    public virtual void Interact()
+    {
+        // This method is meant to be overwritten
+        //Debug.Log("Interacting with " + transform.name);
+    }
 
-	void Update()
-	{
+    void Update()
+    {
         if (Input.GetKeyDown(KeyCode.E))
         {
-			interact = true;
+            interact = true;
         }
-		
-		if (Input.GetKeyUp(KeyCode.E))
-        {
-			interact = false;
-        }
-	}
 
-    public void OnCollisionStay2D(Collision2D collision)
+        if (Input.GetKeyUp(KeyCode.E))
+        {
+            interact = false;
+        }
+    }
+
+    public void OnTriggerEnter2D(Collider2D other)
     {
-		if(interactable.activeSelf && interact)
-			Interact();
+        if (interactable.activeSelf && interact)
+            Interact();
     }
 
 }

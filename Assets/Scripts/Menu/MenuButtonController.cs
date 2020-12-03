@@ -1,70 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using Rewired;
 
 public class MenuButtonController : MonoBehaviour
 {
-    public struct MenuInput
-    {
-        public bool select;
-        public bool returnBack;
-        public bool up;
-        public bool left;
-        public bool down;
-        public bool right;
-    }
-
-    // Use this for initialization
-    public int index;
+    public int index = 0;
     public AudioSource buttonSounds;
 
     [SerializeField] int maxIndex;
-    [SerializeField] int playerId = 0;
     [SerializeField] string scene;
     [SerializeField] LevelLoader levelLoader;
     [SerializeField] Animator musicTransition;
 
-    private Player player;
-    public MenuInput menu;
-    public Mouse mouse;
-
-
-    void Awake()
+    void Start()
     {
-        player = ReInput.players.GetPlayer(playerId);
-        mouse = player.controllers.Mouse;
-
-        foreach (ControllerMapEnabler.RuleSet rs in player.controllers.maps.mapEnabler.ruleSets)
-            rs.enabled = false;
-
-        player.controllers.maps.mapEnabler.ruleSets.Find(item => item.tag == "Menu").enabled = true;
-        player.controllers.maps.mapEnabler.Apply();
+        PlayerInputs.instance.UpdateControllerMap("Menu");
     }
 
     // Update is called once per frame
     void Update()
     {
-        GetInputs();
-        ProcessInputs();
-    }
-
-    private void GetInputs()
-    {
-        menu.up = player.GetButtonDown("Menu Up");
-        menu.left = player.GetButtonDown("Menu Left");
-        menu.down = player.GetButtonDown("Menu Down");
-        menu.right = player.GetButtonDown("Menu Right");
-        menu.select = player.GetButtonDown("Select");
-        menu.returnBack = player.GetButtonDown("Return");
-    }
-
-    private void ProcessInputs()
-    {
-        if (menu.up)
+        if (PlayerInputs.instance.menuUp)
             index--;
-        else if (menu.down)
+        else if (PlayerInputs.instance.menuDown)
             index++;
 
         if (index > maxIndex)
@@ -72,7 +30,7 @@ public class MenuButtonController : MonoBehaviour
         else if (index < 0)
             index = maxIndex;
 
-        if (menu.select)
+        if (PlayerInputs.instance.menuSelect)
             switch (index)
             {
                 case 0:

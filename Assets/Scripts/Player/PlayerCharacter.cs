@@ -18,6 +18,7 @@ public class PlayerCharacter : MonoBehaviour
     [SerializeField] float invincinbilityDelay;
     [SerializeField] float blinkNumber;
     [SerializeField] GameObject sprite;
+    [SerializeField] Transform respawnPoint;
 
     public float maxHealth;
     public float currentHealth;
@@ -45,7 +46,10 @@ public class PlayerCharacter : MonoBehaviour
     void Die()
     {
         Debug.Log("PLAYER: Died");
-        isDead = true;
+        transform.position = respawnPoint.position;
+        currentHealth = maxHealth;
+        healthBar.SetHealth(currentHealth);
+        //isDead = true;
     }
 
 

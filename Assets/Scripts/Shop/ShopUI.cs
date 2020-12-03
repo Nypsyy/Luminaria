@@ -9,7 +9,6 @@ public class ShopUI : MonoBehaviour
     public GameObject shopUI;  // The entire UI
 
     Shop shop;    // Our current inventory
-    private GamemodeManager gmm;
 
     void Start()
     {

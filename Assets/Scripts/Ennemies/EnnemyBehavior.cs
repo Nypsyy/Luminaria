@@ -67,14 +67,15 @@ public class EnnemyBehavior : MonoBehaviour
         sprite.transform.rotation = Quaternion.identity;
 
         ennemyName = ennemyData.ennemyName;
-        maxHealth = ennemyData.health;
+        health = maxHealth = ennemyData.health;
         speed = ennemyData.speed;
         damage = ennemyData.damage;
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         health -= damage;
+        healthBar.SetHealth(health, maxHealth);
 
         if (health <= 0)
         {

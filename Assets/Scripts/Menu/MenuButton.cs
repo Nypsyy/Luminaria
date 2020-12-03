@@ -10,13 +10,12 @@ public class MenuButton : MonoBehaviour
     [SerializeField] int thisIndex;
     [SerializeField] RectTransform rectTransform;
 
-    // Update is called once per frame
     void Update()
     {
         if (menuButtonController.index == thisIndex)
         {
             animator.SetBool("selected", true);
-            if (menuButtonController.menu.select)
+            if (PlayerInputs.instance.menuSelect)
                 animator.SetBool("pressed", true);
             else if (animator.GetBool("pressed"))
             {
@@ -28,6 +27,7 @@ public class MenuButton : MonoBehaviour
             animator.SetBool("selected", false);
     }
 
+    // For the event system
     public void Select()
     {
         menuButtonController.index = thisIndex;

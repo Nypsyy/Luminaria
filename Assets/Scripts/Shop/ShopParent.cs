@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Rewired;
 
 public class ShopParent : MonoBehaviour
 {
@@ -16,9 +17,10 @@ public class ShopParent : MonoBehaviour
     {
         pickUpsToItem();
     }
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && playerNearby)
+        if (PlayerInputs.instance.interract && playerNearby)
         {
             shopUI.SetActive(true);
             if(!isShoploaded) loadShop();
@@ -27,9 +29,10 @@ public class ShopParent : MonoBehaviour
             {
                 Shop.instance.onItemBoughtCallback.Invoke();
             }
+            if (!isShoploaded) loadShop();
         }
 
-        if (Input.GetKeyUp(KeyCode.Escape) && playerNearby)
+        if (PlayerInputs.instance.closeUI && playerNearby)
         {
             shopUI.SetActive(false);
         }
@@ -40,7 +43,7 @@ public class ShopParent : MonoBehaviour
     public void loadShop()
     {
         Shop.instance.shopItems = items;
-        
+
         if (Shop.instance.onItemBoughtCallback != null)
         {
             Shop.instance.onItemBoughtCallback.Invoke();
@@ -63,7 +66,7 @@ public class ShopParent : MonoBehaviour
     public void OnCollisionStay2D(Collision2D collision)
     {
         playerNearby = true;
-        
+
     }
 
     public void OnCollisionExit2D(Collision2D collision)

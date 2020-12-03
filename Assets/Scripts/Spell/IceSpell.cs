@@ -1,42 +1,37 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Rewired;
 
 public class IceSpell : MonoBehaviour
 {
     public float speed = 5f;
-    public int damage = 50;
+    public float damage = 50f;
 
     public Rigidbody2D rb;
     public GameObject impactEffet;
 
-    Vector3 mousePosition;
+    Mouse mouse;
     Vector3 direction;
 
     void Start()
     {
-        mousePosition = Input.mousePosition;
-        mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+        mouse = ReInput.controllers.Mouse;
 
-        direction = mousePosition - transform.position;
+        direction = Camera.main.ScreenToWorldPoint(mouse.screenPosition) - transform.position;
         rb.velocity = direction.normalized * speed;
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log(collision.name);
-
-        Dummy dummy = collision.GetComponent<Dummy>();
-        if (dummy != null)
+        if (other.gameObject.tag == "Ennemy")
         {
-            dummy.TakeDamage(damage);
+            EnnemyBehavior ennemy = other.gameObject.GetComponent<EnnemyBehavior>();
+            ennemy.TakeDamage(damage);
 
+            Instantiate(impactEffet, transform.position, transform.rotation);
+            Destroy(gameObject);
         }
-
-        Instantiate(impactEffet, transform.position, transform.rotation);
-        Destroy(gameObject);
     }
-
-
 }
 
