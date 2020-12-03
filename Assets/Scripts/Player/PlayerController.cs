@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour
     [Header("Wall jump")]
     [SerializeField] Transform checkWallJump;
     [SerializeField] LayerMask isWallJump;
+    [SerializeField] Alphabet alphabet;
 
     public bool isFacingRight = true;
 
@@ -66,6 +67,16 @@ public class PlayerController : MonoBehaviour
     {
         GetInputs();
         ProcessInputs();
+
+        if(Input.GetKeyDown(KeyCode.H))
+        {
+            Sprite sprite = alphabet.inventoryNameDictionary['H'];
+
+            GameObject go = new GameObject("New Sprite");
+            SpriteRenderer renderer = go.AddComponent<SpriteRenderer>();
+            go.transform.localScale *= 6;
+            renderer.sprite = sprite;
+        }
     }
 
     void FixedUpdate()

@@ -7,10 +7,14 @@ using TMPro;
 public class ShopSlot : MonoBehaviour
 {
     public Image icon;
+    public TextMeshProUGUI text;
 
-    Item item;  // Current item in the slot
+    Item item;
 
-    // Add item to the slot
+    void Update()
+    {
+        if(item != null) text.text = item.price.ToString();
+    }
     public void AddItem(Item newItem)
     {
         item = newItem;
@@ -33,6 +37,7 @@ public class ShopSlot : MonoBehaviour
         if (item != null)
         {
             item.Buy();
+            text.text = "";
         }
     }
 }

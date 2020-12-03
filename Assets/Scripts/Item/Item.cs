@@ -50,6 +50,7 @@ public class Item
 		if (price <= Inventory.instance.GetCurrency())
 		{
 			Inventory.instance.Add(this);
+			Inventory.instance.AddCurrency(-price);
 			RemoveFromShop();
 		}
     }
