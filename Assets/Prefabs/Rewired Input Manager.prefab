@@ -413,6 +413,15 @@ MonoBehaviour:
       _behaviorId: 0
       _userAssignable: 1
       _categoryId: 2
+    - _id: 25
+      _name: Open Wheel
+      _type: 1
+      _descriptiveName: Open Wheel
+      _positiveDescriptiveName: 
+      _negativeDescriptiveName: 
+      _behaviorId: 0
+      _userAssignable: 1
+      _categoryId: 2
     actionCategories:
     - _name: Default
       _descriptiveName: Default
@@ -439,7 +448,7 @@ MonoBehaviour:
       - categoryId: 0
         actionIds: 
       - categoryId: 2
-        actionIds: 0000000001000000090000000400000005000000160000001700000018000000
+        actionIds: 000000000100000009000000040000000500000016000000170000001800000019000000
       - categoryId: 3
         actionIds: 0e0000000f0000000b0000000a000000
       - categoryId: 5
@@ -462,7 +471,7 @@ MonoBehaviour:
       _buttonDoublePressSpeed: 0.3
       _buttonShortPressTime: 0.25
       _buttonShortPressExpiresIn: 0
-      _buttonLongPressTime: 1
+      _buttonLongPressTime: 0.6
       _buttonLongPressExpiresIn: 0
       _buttonDeadZone: 0.5
       _buttonDownBuffer: 0
@@ -613,6 +622,17 @@ MonoBehaviour:
         _actionId: 24
         _elementType: 1
         _elementIdentifierId: 15
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: 25
+        _elementType: 1
+        _elementIdentifierId: 10
         _axisRange: 0
         _invert: 0
         _axisContribution: 0
@@ -895,6 +915,17 @@ MonoBehaviour:
         _modifierKey1: 0
         _modifierKey2: 0
         _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: 25
+        _elementType: 1
+        _elementIdentifierId: -1
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 9
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
     - id: 3
       categoryId: 2
       layoutId: 0
@@ -1147,7 +1178,7 @@ MonoBehaviour:
           _customControllerSourceId: -1
           _controllerId: -1
     playerIdCounter: 3
-    actionIdCounter: 25
+    actionIdCounter: 26
     actionCategoryIdCounter: 6
     inputBehaviorIdCounter: 1
     mapCategoryIdCounter: 4

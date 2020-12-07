@@ -1,76 +1,110 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Rewired;
+using Luminaria;
 
 public class Spell : MonoBehaviour
 {
-    enum SpellType
-    {
-        fire,
-        ice,
-    }
+    Element elementType = Element.WATER;
 
     public Transform firePoint;
     public PlayerController playerController;
     public GameObject fireSpellPrefab;
     public GameObject iceSpellPrefab;
+    public GameObject earthSpellPrefab;
+    public GameObject airSpellPrefab;
 
     public GameObject abilityUI;
 
-    PlayerInputs inputs;
-    Vector3 mousePosition;
-    Vector2 direction;
-    SpellType spellType = SpellType.fire;
+    [SerializeField] ElementWheelBehavior elementWheel;
 
-    void Awake()
+    PlayerController controller;
+    Mouse mouse;
+
+    void Start()
     {
-        inputs = GetComponent<PlayerInputs>();
-        if (inputs == null) throw new System.Exception("No inputs detected");
+        controller = GetComponent<PlayerController>();
+        mouse = ReInput.controllers.Mouse;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (inputs.castSpell)
+        if (PlayerInputs.instance.closeWheel)
+        {
+            UpdateElementType();
+        }
+
+        if (PlayerInputs.instance.castSpell)
         {
             if (!abilityUI.activeSelf)
             {
                 //Shoot();
             }
         }
-
-        if (Input.GetKeyDown(KeyCode.F))
+        else if (PlayerInputs.instance.releaseCast)
         {
-            spellType = SpellType.fire;
-            Debug.Log("Let's burn this place down");
-        }
-
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            spellType = SpellType.ice;
-            Debug.Log("Getting cold out there..");
+            StopCoroutine(SummoningEarth());
+            controller.canControl = true;
         }
     }
 
     void Shoot()
     {
-        mousePosition = Input.mousePosition;
-        mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
-        direction = inputs.mouse.screenPosition - (Vector2)transform.position;
+        Vector2 direction = Camera.main.ScreenToWorldPoint(mouse.screenPosition) - transform.position;
+        direction.Normalize();
+
+        float rotation = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
 
         if ((playerController.isFacingRight && direction.x < 0) || (!playerController.isFacingRight && direction.x > 0))
         {
             playerController.Flip();
         }
 
-        switch (spellType)
+        switch (elementType)
         {
-            case SpellType.fire:
-                Instantiate(fireSpellPrefab, firePoint.position, firePoint.rotation);
+            case Element.FIRE:
+                Instantiate(fireSpellPrefab, firePoint.position, Quaternion.Euler(0f, 0f, rotation + 90));
                 break;
-            case SpellType.ice:
-                Instantiate(iceSpellPrefab, firePoint.position, firePoint.rotation);
+            case Element.WATER:
+                Instantiate(iceSpellPrefab, firePoint.position, Quaternion.Euler(0f, 0f, rotation - 90));
+                break;
+            case Element.EARTH:
+                StartCoroutine(SummoningEarth());
+                break;
+            case Element.AIR:
+                Instantiate(airSpellPrefab, firePoint.position, Quaternion.identity);
                 break;
         }
+    }
+
+    void UpdateElementType()
+    {
+        switch (elementWheel.selection)
+        {
+            case 0:
+                elementType = Element.WATER;
+                break;
+            case 1:
+                elementType = Element.EARTH;
+                break;
+            case 2:
+                elementType = Element.FIRE;
+                break;
+            case 3:
+                elementType = Element.AIR;
+                break;
+        }
+
+    }
+
+    IEnumerator SummoningEarth()
+    {
+        controller.canControl = false;
+        controller.StopMotion();
+        yield return new WaitUntil(() => PlayerInputs.instance.summonSpell);
+        Instantiate(earthSpellPrefab, Camera.main.ScreenToWorldPoint(mouse.screenPosition), Quaternion.identity);
+        controller.canControl = true;
     }
 }

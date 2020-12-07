@@ -21,7 +21,7 @@ public class ShopParent : MonoBehaviour
 
     void Update()
     {
-        if ((PlayerInputs.instance.interract && playerNearby) || dialogues.openShop && playerNearby)
+        if ((PlayerInputs.instance.interract && playerNearby) || (dialogues.openShop && playerNearby))
         {
             Debug.Log("C'est ouvert");
             dialogues.openShop = false;

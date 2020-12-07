@@ -51,6 +51,8 @@ public class Dialogues : MonoBehaviour
     {
         dialoguePoint.rotation = Quaternion.Euler(0, 0, 0);
 
+        Debug.Log(openShop);
+
         StartCoroutine(WaitTypewriteFx());
 
         if (isTextDisplayed)
@@ -313,8 +315,10 @@ public class Dialogues : MonoBehaviour
     {
         Transform dialoguePoint = gameObject.transform.Find("/" + this.name + "/DialoguePoint");
 
+        Debug.Log("Oui");
         if (dialogueData.GetResponse()[0].spriteData.name.Equals("OpenShop"))
         {
+
             openShop = true;
 
             foreach (Transform child in dialoguePoint)

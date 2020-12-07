@@ -1205,7 +1205,10 @@ MonoBehaviour:
   jump: 0
   interract: 0
   openMenu: 0
+  openWheel: 0
+  closeWheel: 0
   castSpell: 0
+  summonSpell: 0
 --- !u!82 &1577663219
 AudioSource:
   m_ObjectHideFlags: 0

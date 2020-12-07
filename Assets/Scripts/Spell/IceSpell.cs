@@ -5,21 +5,24 @@ using Rewired;
 
 public class IceSpell : MonoBehaviour
 {
-    public float speed = 5f;
+    public float speed = 2f;
     public float damage = 50f;
 
     public Rigidbody2D rb;
-    public GameObject impactEffet;
 
-    Mouse mouse;
-    Vector3 direction;
+    Animator animator;
 
     void Start()
     {
-        mouse = ReInput.controllers.Mouse;
+        animator = GetComponentInChildren<Animator>();
 
-        direction = Camera.main.ScreenToWorldPoint(mouse.screenPosition) - transform.position;
-        rb.velocity = direction.normalized * speed;
+        Mouse mouse = ReInput.controllers.Mouse;
+
+        Vector2 direction = Camera.main.ScreenToWorldPoint(mouse.screenPosition) - transform.position;
+        direction.Normalize();
+        rb.velocity = direction * speed;
+
+        AudioManager.instance.Play("IceCast");
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -29,9 +32,26 @@ public class IceSpell : MonoBehaviour
             EnnemyBehavior ennemy = other.gameObject.GetComponent<EnnemyBehavior>();
             ennemy.TakeDamage(damage);
 
-            Instantiate(impactEffet, transform.position, transform.rotation);
-            Destroy(gameObject);
+            StartCoroutine(Impact(true));
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
+            StartCoroutine(Impact(false));
+
+    }
+
+    IEnumerator Impact(bool sound)
+    {
+        if (sound)
+            AudioManager.instance.Play("IceImpact");
+
+        animator.SetTrigger("IsDestroyed");
+        rb.velocity = Vector2.zero;
+        yield return new WaitForSeconds(.2f);
+        Destroy(gameObject);
     }
 }
 
