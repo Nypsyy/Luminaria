@@ -9,17 +9,20 @@ public class FireSpell : MonoBehaviour
     public float damage = 25f;
 
     public Rigidbody2D rb;
-    public GameObject impactEffet;
 
-    Mouse mouse;
-    Vector2 direction;
+    Animator animator;
 
     void Start()
     {
-        mouse = ReInput.controllers.Mouse;
+        animator = GetComponentInChildren<Animator>();
+        Mouse mouse = ReInput.controllers.Mouse;
 
-        direction = Camera.main.ScreenToWorldPoint(mouse.screenPosition) - transform.position;
-        rb.velocity = direction.normalized * speed;
+        Vector2 direction = Camera.main.ScreenToWorldPoint(mouse.screenPosition) - transform.position;
+        direction.Normalize();
+
+        rb.velocity = direction * speed;
+
+        AudioManager.instance.Play("FireCast");
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -29,8 +32,24 @@ public class FireSpell : MonoBehaviour
             EnnemyBehavior ennemy = other.gameObject.GetComponent<EnnemyBehavior>();
             ennemy.TakeDamage(damage);
 
-            Instantiate(impactEffet, transform.position, transform.rotation);
-            Destroy(gameObject);
+            StartCoroutine(Impact(true));
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
+            StartCoroutine(Impact(false));
+    }
+
+    IEnumerator Impact(bool sound)
+    {
+        if (sound)
+            AudioManager.instance.Play("FireImpact");
+
+        animator.SetTrigger("IsDestroyed");
+        rb.velocity = Vector2.zero;
+        yield return new WaitForSeconds(.2f);
+        Destroy(gameObject);
     }
 }

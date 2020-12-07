@@ -21,6 +21,8 @@ public class EnnemyBehavior : MonoBehaviour
     public float damage;
     public float aggroRange;
 
+    bool isInvincible;
+
     void Start()
     {
         aiPath = GetComponent<AIPath>();
@@ -47,13 +49,11 @@ public class EnnemyBehavior : MonoBehaviour
     {
         if (Vector2.Distance(transform.position, player.transform.position) < aggroRange)
         {
-            Debug.Log("ENNEMY: Aggro");
             aiPath.canSearch = true;
             aiPath.canMove = true;
         }
         else
         {
-            Debug.Log("ENNEMY: Idle");
             aiPath.canSearch = false;
             aiPath.canMove = false;
         }
@@ -74,6 +74,8 @@ public class EnnemyBehavior : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        if (isInvincible) return;
+
         health -= damage;
         healthBar.SetHealth(health, maxHealth);
 
@@ -83,11 +85,24 @@ public class EnnemyBehavior : MonoBehaviour
             health = 0;
             Die();
         }
+
+        StartCoroutine(Invincible());
     }
 
     void Die()
     {
         Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
+    }
+
+    IEnumerator Invincible()
+    {
+        isInvincible = true;
+        SpriteRenderer sprite = GetComponentInChildren<SpriteRenderer>();
+        sprite.color = Color.red;
+        yield return new WaitForSeconds(.06f);
+        sprite.color = Color.white;
+        yield return new WaitForSeconds(.06f);
+        isInvincible = false;
     }
 }

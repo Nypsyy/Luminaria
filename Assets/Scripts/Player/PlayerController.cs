@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour
 {
@@ -20,15 +21,20 @@ public class PlayerController : MonoBehaviour
     [Header("Wall jump")]
     [SerializeField] Transform checkWallJump;
     [SerializeField] LayerMask isWallJump;
+    [Space]
+    [Header("Events")]
 
+    public UnityEvent OnLandEvent;
+
+    public Animator animator;
     public bool isFacingRight = true;
+    public bool canControl = true;
 
     PlayerCharacter character;
-    bool isGrounded;
-    bool isWalled;
-    bool canControl = true;
+    [HideInInspector] public bool isGrounded;
+    [HideInInspector] public bool isWalled;
     const float groundRadius = .2f;
-    const float wallJumpRadius = .3f;
+    const float wallJumpRadius = .4f;
     Rigidbody2D rb2D;
     Collider2D currentWall;
 
@@ -38,10 +44,15 @@ public class PlayerController : MonoBehaviour
 
         character = GetComponent<PlayerCharacter>();
         rb2D = GetComponent<Rigidbody2D>();
+
+        if (OnLandEvent == null)
+            OnLandEvent = new UnityEvent();
     }
 
     void Update()
     {
+        animator.SetFloat("Speed", Mathf.Abs(rb2D.velocity.x));
+
         if (PlayerInputs.instance.jump)
         {
             if (isGrounded)
@@ -53,6 +64,9 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        bool wasGrounded = isGrounded;
+        isGrounded = isWalled = false;
+
         if (character.isDead)
         {
             canControl = false;
@@ -60,10 +74,7 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        isGrounded = isWalled = false;
-
-        if (canControl)
-            rb2D.velocity = new Vector2(PlayerInputs.instance.moveHorizontal * speed * Time.fixedDeltaTime * 10f, rb2D.velocity.y);
+        Move();
 
         if (PlayerInputs.instance.moveHorizontal > 0 && !isFacingRight)
             Flip();
@@ -73,11 +84,27 @@ public class PlayerController : MonoBehaviour
         Collider2D[] colliders = Physics2D.OverlapCircleAll(checkGround.position, groundRadius, isGround);
         for (int i = 0; i < colliders.Length; i++)
             if (colliders[i].gameObject != gameObject)
+            {
                 isGrounded = true;
+                if (!wasGrounded)
+                    OnLandEvent.Invoke();
+            }
+
 
         currentWall = Physics2D.OverlapCircle(checkWallJump.position, wallJumpRadius, isWallJump);
         if (currentWall != null && currentWall.gameObject != gameObject)
             isWalled = true;
+    }
+
+    public void StopMotion()
+    {
+        rb2D.velocity = new Vector2(0, rb2D.velocity.y);
+    }
+
+    void Move()
+    {
+        if (canControl)
+            rb2D.velocity = new Vector2(PlayerInputs.instance.moveHorizontal * speed * Time.fixedDeltaTime * 10f, rb2D.velocity.y);
     }
 
     void WallJump()
@@ -93,7 +120,8 @@ public class PlayerController : MonoBehaviour
 
     void Jump()
     {
-        isGrounded = false;
+        AudioManager.instance.Play("PlayerJump");
+        animator.SetBool("IsJumping", true);
         rb2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
     }
 
@@ -133,6 +161,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void OnLand()
+    {
+        if (rb2D.velocity.y < .5f)
+            AudioManager.instance.Play("PlayerLandGrass");
+
+        animator.SetBool("IsJumping", false);
+    }
+
     void OnCollisionExit2D(Collision2D collision)
     {
         interactUI.SetActive(false);
@@ -145,5 +181,11 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(.4f);
         Debug.Log("CONTROLLER: Recovered control");
         canControl = true;
+    }
+
+    private void OnDrawGizmos()
+    {
+        //Gizmos.DrawSphere(checkGround.position, groundRadius);
+        //Gizmos.DrawSphere(checkWallJump.position, wallJumpRadius);
     }
 }

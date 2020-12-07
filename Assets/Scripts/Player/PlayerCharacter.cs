@@ -19,7 +19,9 @@ public class PlayerCharacter : MonoBehaviour
     [SerializeField] float blinkNumber;
     [SerializeField] GameObject sprite;
     [SerializeField] Transform respawnPoint;
+    [SerializeField] Vector3 scale;
 
+    public Animator animator;
     public float maxHealth;
     public float currentHealth;
     public HealthBar healthBar;
@@ -33,7 +35,7 @@ public class PlayerCharacter : MonoBehaviour
     {
         controller = GetComponent<PlayerController>();
         currentHealth = maxHealth;
-        delayBetweenBlinks = invincinbilityDelay / blinkNumber;
+        delayBetweenBlinks = invincinbilityDelay / (blinkNumber * 2);
         healthBar.SetMaxHealth(currentHealth);
     }
 
@@ -46,12 +48,8 @@ public class PlayerCharacter : MonoBehaviour
     void Die()
     {
         Debug.Log("PLAYER: Died");
-        transform.position = respawnPoint.position;
-        currentHealth = maxHealth;
-        healthBar.SetHealth(currentHealth);
-        //isDead = true;
+        StartCoroutine(Dying());
     }
-
 
     public void TakeDamage(bool kockback, float xDistance, float damage)
     {
@@ -82,17 +80,40 @@ public class PlayerCharacter : MonoBehaviour
 
     }
 
+    void Respawn()
+    {
+        transform.position = respawnPoint.position;
+        currentHealth = maxHealth;
+        healthBar.SetHealth(currentHealth);
+
+        isDead = false;
+
+        animator.SetBool("IsDead", false);
+    }
+
+    IEnumerator Dying()
+    {
+        isDead = true;
+        animator.SetBool("IsDead", true);
+        yield return new WaitForSeconds(2);
+
+        Respawn();
+    }
+
     IEnumerator Invincible()
     {
         Debug.Log("PLAYER: Invincible");
         isInvincible = true;
+        animator.SetTrigger("IsHurt");
+
+        yield return new WaitForSeconds(.2f);
 
         for (float i = 0; i < invincinbilityDelay; i += delayBetweenBlinks)
         {
-            if (sprite.transform.localScale == Vector3.one)
+            if (sprite.transform.localScale != Vector3.zero)
                 sprite.transform.localScale = Vector3.zero;
             else
-                sprite.transform.localScale = Vector3.one;
+                sprite.transform.localScale = scale;
 
             yield return new WaitForSeconds(delayBetweenBlinks);
         }
