@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerCharacter : MonoBehaviour
 {
@@ -25,7 +26,9 @@ public class PlayerCharacter : MonoBehaviour
     public float maxHealth;
     public float currentHealth;
     public HealthBar healthBar;
-    public bool isDead = false;
+
+    public UnityEvent OnRespawnEvent;
+    public UnityEvent OnDeathEvent;
 
     PlayerController controller;
     bool isInvincible = false;
@@ -37,6 +40,11 @@ public class PlayerCharacter : MonoBehaviour
         currentHealth = maxHealth;
         delayBetweenBlinks = invincinbilityDelay / (blinkNumber * 2);
         healthBar.SetMaxHealth(currentHealth);
+
+        if (OnRespawnEvent == null)
+            OnRespawnEvent = new UnityEvent();
+        if (OnDeathEvent == null)
+            OnDeathEvent = new UnityEvent();
     }
 
     void Update()
@@ -49,6 +57,7 @@ public class PlayerCharacter : MonoBehaviour
     {
         Debug.Log("PLAYER: Died");
         StartCoroutine(Dying());
+        OnDeathEvent.Invoke();
     }
 
     public void TakeDamage(bool kockback, float xDistance, float damage)
@@ -82,21 +91,18 @@ public class PlayerCharacter : MonoBehaviour
 
     void Respawn()
     {
+        animator.SetBool("IsDead", false);
         transform.position = respawnPoint.position;
         currentHealth = maxHealth;
         healthBar.SetHealth(currentHealth);
 
-        isDead = false;
-
-        animator.SetBool("IsDead", false);
+        OnRespawnEvent.Invoke();
     }
 
     IEnumerator Dying()
     {
-        isDead = true;
         animator.SetBool("IsDead", true);
         yield return new WaitForSeconds(2);
-
         Respawn();
     }
 

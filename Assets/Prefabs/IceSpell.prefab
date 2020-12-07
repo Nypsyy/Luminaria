@@ -44,7 +44,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.0029651322, y: -0.09339988}
@@ -86,8 +86,6 @@ MonoBehaviour:
   speed: 5
   damage: 50
   rb: {fileID: 5978187808529323798}
-  impactEffet: {fileID: 1473625048454486, guid: 284f05ab582ef494a9ab1dd8bc1e76ae,
-    type: 3}
 --- !u!1 &2905550995244626923
 GameObject:
   m_ObjectHideFlags: 0

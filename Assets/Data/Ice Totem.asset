@@ -17,3 +17,4 @@ MonoBehaviour:
   health: 500
   speed: 0
   damage: 4
+  element: 1

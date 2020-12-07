@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Rewired;
+using Luminaria;
 
 public class FireSpell : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class FireSpell : MonoBehaviour
     public Rigidbody2D rb;
 
     Animator animator;
+    Element element = Element.FIRE;
 
     void Start()
     {
@@ -27,19 +29,16 @@ public class FireSpell : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Ground"))
+            StartCoroutine(Impact(false));
+
         if (other.gameObject.tag == "Ennemy")
         {
             EnnemyBehavior ennemy = other.gameObject.GetComponent<EnnemyBehavior>();
-            ennemy.TakeDamage(damage);
+            ennemy.TakeDamage(damage, element);
 
             StartCoroutine(Impact(true));
         }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
-            StartCoroutine(Impact(false));
     }
 
     IEnumerator Impact(bool sound)

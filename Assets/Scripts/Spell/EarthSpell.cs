@@ -1,20 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Rewired;
+using Luminaria;
 
 public class EarthSpell : MonoBehaviour
 {
     public GameObject sprite;
 
-    Mouse mouse;
-    Vector3 loc;
-
-    void Start()
-    {
-        mouse = ReInput.controllers.Mouse;
-        loc = Camera.main.ScreenToWorldPoint(mouse.screenPosition);
-    }
+    Element element = Element.EARTH;
 
     void OnCollisionEnter2D(Collision2D other)
     {
