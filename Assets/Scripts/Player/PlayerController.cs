@@ -72,19 +72,7 @@ public class PlayerController : MonoBehaviour
         bool wasGrounded = isGrounded;
         isGrounded = isWalled = false;
 
-        if (character.isDead)
-        {
-            canControl = false;
-            rb2D.velocity = Vector2.zero;
-            return;
-        }
-
         Move();
-
-        if (PlayerInputs.instance.moveHorizontal > 0 && !isFacingRight)
-            Flip();
-        else if (PlayerInputs.instance.moveHorizontal < 0 && isFacingRight)
-            Flip();
 
         Collider2D[] colliders = Physics2D.OverlapCircleAll(checkGround.position, groundRadius, isGround);
         for (int i = 0; i < colliders.Length; i++)
@@ -112,7 +100,15 @@ public class PlayerController : MonoBehaviour
     void Move()
     {
         if (canControl)
+        {
             rb2D.velocity = new Vector2(PlayerInputs.instance.moveHorizontal * speed * Time.fixedDeltaTime * 10f, rb2D.velocity.y);
+
+            if (PlayerInputs.instance.moveHorizontal > 0 && !isFacingRight)
+                Flip();
+            else if (PlayerInputs.instance.moveHorizontal < 0 && isFacingRight)
+                Flip();
+        }
+
     }
 
     void WallJump()
@@ -229,6 +225,16 @@ public class PlayerController : MonoBehaviour
                 }
                 break;
         }
+    }
+
+    public void UnControllable()
+    {
+        canControl = false;
+    }
+
+    public void Controllable()
+    {
+        canControl = true;
     }
 
     public void OnLand()

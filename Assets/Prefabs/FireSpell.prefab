@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1231104708133723015}
+  - component: {fileID: 8728705814075184190}
   - component: {fileID: 8233925405995084132}
   - component: {fileID: -112363900127834443}
-  - component: {fileID: 8728705814075184190}
   m_Layer: 0
   m_Name: FireSpell
   m_TagString: Untagged
@@ -34,6 +34,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &8728705814075184190
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 687050921662306953}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.00465565, y: -0.22569427}
+  serializedVersion: 2
+  m_Radius: 0.1392914
 --- !u!50 &8233925405995084132
 Rigidbody2D:
   serializedVersion: 4
@@ -70,24 +86,6 @@ MonoBehaviour:
   speed: 10
   damage: 25
   rb: {fileID: 8233925405995084132}
-  impactEffet: {fileID: 1473625048454486, guid: 284f05ab582ef494a9ab1dd8bc1e76ae,
-    type: 3}
---- !u!58 &8728705814075184190
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 687050921662306953}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.00465565, y: -0.22569427}
-  serializedVersion: 2
-  m_Radius: 0.1392914
 --- !u!1 &1157204403359571797
 GameObject:
   m_ObjectHideFlags: 0

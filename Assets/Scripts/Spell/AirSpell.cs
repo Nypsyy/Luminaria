@@ -1,7 +1,7 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Rewired;
+using Luminaria;
 
 public class AirSpell : MonoBehaviour
 {
@@ -13,6 +13,7 @@ public class AirSpell : MonoBehaviour
     Vector2 direction;
     Mouse mouse;
     Animator animator;
+    Element element = Element.AIR;
 
     void Start()
     {
@@ -45,7 +46,7 @@ public class AirSpell : MonoBehaviour
         if (other.gameObject.tag == "Ennemy")
         {
             EnnemyBehavior ennemy = other.gameObject.GetComponent<EnnemyBehavior>();
-            ennemy.TakeDamage(damage);
+            ennemy.TakeDamage(damage, element);
         }
     }
 

@@ -19,11 +19,13 @@ public class Spell : MonoBehaviour
 
     [SerializeField] ElementWheelBehavior elementWheel;
 
+    Animator animator;
     PlayerController controller;
     Mouse mouse;
 
     void Start()
     {
+        animator = GetComponentInChildren<Animator>();
         controller = GetComponent<PlayerController>();
         mouse = ReInput.controllers.Mouse;
     }
@@ -65,15 +67,18 @@ public class Spell : MonoBehaviour
         switch (elementType)
         {
             case Element.FIRE:
+                animator.SetTrigger("Attack");
                 Instantiate(fireSpellPrefab, firePoint.position, Quaternion.Euler(0f, 0f, rotation + 90));
                 break;
             case Element.WATER:
+                animator.SetTrigger("Attack");
                 Instantiate(iceSpellPrefab, firePoint.position, Quaternion.Euler(0f, 0f, rotation - 90));
                 break;
             case Element.EARTH:
                 StartCoroutine(SummoningEarth());
                 break;
             case Element.AIR:
+                animator.SetTrigger("Attack");
                 Instantiate(airSpellPrefab, firePoint.position, Quaternion.identity);
                 break;
         }
