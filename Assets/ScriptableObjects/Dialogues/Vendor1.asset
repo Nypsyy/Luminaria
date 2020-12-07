@@ -15,7 +15,7 @@ MonoBehaviour:
   dialogueID: 0
   dialogue:
   - Bonjour ! Comment vas-tu ?$
-  - Veux-tu voir ce que je vends ?$
+  - Veux-tu voir ce que je<n>vends ?$
   responseOptions:
   - spriteData: {fileID: 11400000, guid: fec12360282d42546b2b5dda222b55ad, type: 2}
     text: Oui

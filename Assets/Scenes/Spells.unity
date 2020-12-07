@@ -5969,11 +5969,6 @@ PrefabInstance:
       propertyPath: text
       value: 
       objectReference: {fileID: 105940120}
-    - target: {fileID: 2252681619978876243, guid: 29477d88d77a8b84f98c4b593825c203,
-        type: 3}
-      propertyPath: alphabet
-      value: 
-      objectReference: {fileID: 106066575}
     - target: {fileID: 2902402752703351318, guid: 29477d88d77a8b84f98c4b593825c203,
         type: 3}
       propertyPath: m_Name
@@ -9043,7 +9038,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1036781781
 Transform:
   m_ObjectHideFlags: 0
