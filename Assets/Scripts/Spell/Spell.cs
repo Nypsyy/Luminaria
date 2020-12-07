@@ -35,7 +35,7 @@ public class Spell : MonoBehaviour
         {
             if (!abilityUI.activeSelf)
             {
-                Shoot();
+                //Shoot();
             }
         }
 

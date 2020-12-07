@@ -214,10 +214,12 @@ MonoBehaviour:
   menuLeft: 0
   menuDown: 0
   menuRight: 0
-  openInventory: 0
-  closeInventory: 0
+  openUI: 0
+  closeUI: 0
   moveHorizontal: 0
   jump: 0
+  interract: 0
+  openMenu: 0
   castSpell: 0
 --- !u!114 &2252681619978876243
 MonoBehaviour:
@@ -301,7 +303,6 @@ MonoBehaviour:
   iceSpellPrefab: {fileID: 2322428236120623337, guid: 9a55401176851854d9600fef05331403,
     type: 3}
   abilityUI: {fileID: 0}
-  player: {fileID: 2902402752703351319}
 --- !u!1 &2902402753435174782
 GameObject:
   m_ObjectHideFlags: 0

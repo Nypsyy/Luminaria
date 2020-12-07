@@ -1,0 +1,2048 @@
+fileFormatVersion: 2
+guid: 8cf4b2376740126428dad2728d088f5d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2535789639667879789
+    second: hachicro 1_0
+  - first:
+      213: -5454648895804706071
+    second: hachicro 1_1
+  - first:
+      213: -4872556018515896477
+    second: hachicro 1_2
+  - first:
+      213: -3940373036486851626
+    second: hachicro 1_3
+  - first:
+      213: 1699165234927354403
+    second: hachicro 1_4
+  - first:
+      213: 8960868523313812058
+    second: hachicro 1_5
+  - first:
+      213: 9164940981399067906
+    second: hachicro 1_6
+  - first:
+      213: -4773858986060326188
+    second: hachicro 1_7
+  - first:
+      213: 4080868386275619028
+    second: hachicro 1_8
+  - first:
+      213: -687684313852002122
+    second: hachicro 1_9
+  - first:
+      213: -7365890823429027911
+    second: hachicro 1_10
+  - first:
+      213: 6156882174702149027
+    second: hachicro 1_11
+  - first:
+      213: -3575969246447599161
+    second: hachicro 1_12
+  - first:
+      213: 1598191076983672163
+    second: hachicro 1_13
+  - first:
+      213: 7852558233196503169
+    second: hachicro 1_14
+  - first:
+      213: -9180371925163673094
+    second: hachicro 1_15
+  - first:
+      213: 4318549538548074505
+    second: hachicro 1_16
+  - first:
+      213: -17438312772919324
+    second: hachicro 1_17
+  - first:
+      213: 365005410994244706
+    second: hachicro 1_18
+  - first:
+      213: -1897610519709954154
+    second: hachicro 1_19
+  - first:
+      213: 4967796933260127594
+    second: hachicro 1_20
+  - first:
+      213: 5757534283989298083
+    second: hachicro 1_21
+  - first:
+      213: 4564582924143754943
+    second: hachicro 1_22
+  - first:
+      213: -4915213066706158912
+    second: hachicro 1_23
+  - first:
+      213: 8451134086650218839
+    second: hachicro 1_24
+  - first:
+      213: -3833792440614679208
+    second: hachicro 1_25
+  - first:
+      213: 7297799928085830794
+    second: hachicro 1_26
+  - first:
+      213: -7880705988745935186
+    second: hachicro 1_27
+  - first:
+      213: -4407901120108122899
+    second: hachicro 1_28
+  - first:
+      213: 2717472754111025475
+    second: hachicro 1_29
+  - first:
+      213: 238543400107828134
+    second: hachicro 1_30
+  - first:
+      213: -2902168113387886829
+    second: hachicro 1_31
+  - first:
+      213: -4049132603534123796
+    second: hachicro 1_32
+  - first:
+      213: 1366838821450502586
+    second: hachicro 1_33
+  - first:
+      213: -3913359214821331877
+    second: hachicro 1_34
+  - first:
+      213: -3225357896570064099
+    second: hachicro 1_35
+  - first:
+      213: -1869866302283240575
+    second: hachicro 1_36
+  - first:
+      213: -2846460318766118623
+    second: hachicro 1_37
+  - first:
+      213: -2156417167829881259
+    second: hachicro 1_38
+  - first:
+      213: 6410798030599574097
+    second: hachicro 1_39
+  - first:
+      213: -5901382033372459760
+    second: hachicro 1_40
+  - first:
+      213: -4921341977987298597
+    second: hachicro 1_41
+  - first:
+      213: -6397817437103525606
+    second: hachicro 1_42
+  - first:
+      213: -2568565564165870379
+    second: hachicro 1_43
+  - first:
+      213: -35084712495534130
+    second: hachicro 1_44
+  - first:
+      213: 7157089638737602923
+    second: hachicro 1_45
+  - first:
+      213: 4724173953425640419
+    second: hachicro 1_46
+  - first:
+      213: -1131086219707675803
+    second: hachicro 1_47
+  - first:
+      213: -3699855503606177403
+    second: hachicro 1_48
+  - first:
+      213: 7741762251362925948
+    second: hachicro 1_49
+  - first:
+      213: 7644788178993383698
+    second: hachicro 1_50
+  - first:
+      213: 1541708896808257027
+    second: hachicro 1_51
+  - first:
+      213: -7264821526794244846
+    second: hachicro 1_52
+  - first:
+      213: 5354579578211180441
+    second: hachicro 1_53
+  - first:
+      213: 6834878924967809781
+    second: hachicro 1_54
+  - first:
+      213: 9060933933134929199
+    second: hachicro 1_55
+  - first:
+      213: -2487616390669467668
+    second: hachicro 1_56
+  - first:
+      213: 7018707299658712406
+    second: hachicro 1_57
+  - first:
+      213: -4506658323992473234
+    second: hachicro 1_58
+  - first:
+      213: 5898679813433650672
+    second: hachicro 1_59
+  - first:
+      213: 6638933192529466567
+    second: hachicro 1_60
+  - first:
+      213: 1193528648641622743
+    second: hachicro 1_61
+  - first:
+      213: 505986682488401793
+    second: hachicro 1_62
+  - first:
+      213: -6076781034324573527
+    second: hachicro 1_63
+  - first:
+      213: 3515169708396250981
+    second: hachicro 1_64
+  - first:
+      213: -3166625241942233801
+    second: hachicro 1_65
+  - first:
+      213: 4215564783472934123
+    second: hachicro 1_66
+  - first:
+      213: -184308598133863546
+    second: hachicro 1_67
+  - first:
+      213: -5438907685472794145
+    second: hachicro 1_68
+  - first:
+      213: 2895322938689121773
+    second: hachicro 1_69
+  - first:
+      213: -3948571733834348906
+    second: hachicro 1_70
+  - first:
+      213: -7921073323444864324
+    second: hachicro 1_71
+  - first:
+      213: -7630386999222874388
+    second: hachicro 1_72
+  - first:
+      213: 7336361891857383020
+    second: hachicro 1_73
+  - first:
+      213: 573452001467010072
+    second: hachicro 1_74
+  - first:
+      213: 8582398078397842420
+    second: hachicro 1_75
+  - first:
+      213: -3909244483435780579
+    second: hachicro 1_76
+  - first:
+      213: 766048834936901473
+    second: hachicro 1_77
+  - first:
+      213: -7103679394613675522
+    second: hachicro 1_78
+  - first:
+      213: 7973761791114715874
+    second: hachicro 1_79
+  - first:
+      213: -3103467105362032092
+    second: hachicro 1_80
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: hachicro 1_0
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 6399
+        width: 248
+        height: 263
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 390fa7602c01fccd0800000000000000
+      internalID: -2535789639667879789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_1
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 6392
+        width: 258
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e2751faab13d44b0800000000000000
+      internalID: -5454648895804706071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_2
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 6391
+        width: 253
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3671b28fd14316cb0800000000000000
+      internalID: -4872556018515896477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_3
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 6391
+        width: 249
+        height: 271
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d38cada99bf059c0800000000000000
+      internalID: -3940373036486851626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_4
+      rect:
+        serializedVersion: 2
+        x: 1142
+        y: 6396
+        width: 259
+        height: 268
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 322c98257c5a49710800000000000000
+      internalID: 1699165234927354403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_5
+      rect:
+        serializedVersion: 2
+        x: 1406
+        y: 6398
+        width: 245
+        height: 264
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a52591bf1766b5c70800000000000000
+      internalID: 8960868523313812058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_6
+      rect:
+        serializedVersion: 2
+        x: 1657
+        y: 6399
+        width: 252
+        height: 263
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20d16bfb349603f70800000000000000
+      internalID: 9164940981399067906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_7
+      rect:
+        serializedVersion: 2
+        x: 1911
+        y: 6399
+        width: 263
+        height: 263
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4da51109b88dfbdb0800000000000000
+      internalID: -4773858986060326188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_8
+      rect:
+        serializedVersion: 2
+        x: 2182
+        y: 6399
+        width: 101
+        height: 263
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d0741b0d2822a830800000000000000
+      internalID: 4080868386275619028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_9
+      rect:
+        serializedVersion: 2
+        x: 2412
+        y: 6395
+        width: 203
+        height: 265
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b04e3392cad476f0800000000000000
+      internalID: -687684313852002122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_10
+      rect:
+        serializedVersion: 2
+        x: 2696
+        y: 6395
+        width: 256
+        height: 273
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b7043f725917c990800000000000000
+      internalID: -7365890823429027911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_11
+      rect:
+        serializedVersion: 2
+        x: 2958
+        y: 6393
+        width: 137
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ad5e03a7b3a17550800000000000000
+      internalID: 6156882174702149027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_12
+      rect:
+        serializedVersion: 2
+        x: 3190
+        y: 6393
+        width: 260
+        height: 269
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c105c9aaea9f5ec0800000000000000
+      internalID: -3575969246447599161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_13
+      rect:
+        serializedVersion: 2
+        x: 3457
+        y: 6391
+        width: 247
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36d8fc2215aed2610800000000000000
+      internalID: 1598191076983672163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_14
+      rect:
+        serializedVersion: 2
+        x: 3711
+        y: 6389
+        width: 243
+        height: 276
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1802fb3cb14e9fc60800000000000000
+      internalID: 7852558233196503169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_15
+      rect:
+        serializedVersion: 2
+        x: 3966
+        y: 6391
+        width: 247
+        height: 273
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af976aeaf54c89080800000000000000
+      internalID: -9180371925163673094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_16
+      rect:
+        serializedVersion: 2
+        x: 4216
+        y: 6389
+        width: 257
+        height: 277
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 908c516bce19eeb30800000000000000
+      internalID: 4318549538548074505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_17
+      rect:
+        serializedVersion: 2
+        x: 4476
+        y: 6389
+        width: 251
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ef10b962fb02cff0800000000000000
+      internalID: -17438312772919324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_18
+      rect:
+        serializedVersion: 2
+        x: 4729
+        y: 6389
+        width: 256
+        height: 277
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26c4867cc72c01500800000000000000
+      internalID: 365005410994244706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_19
+      rect:
+        serializedVersion: 2
+        x: 4985
+        y: 6391
+        width: 254
+        height: 277
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69fc4aa49455aa5e0800000000000000
+      internalID: -1897610519709954154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_20
+      rect:
+        serializedVersion: 2
+        x: 5239
+        y: 6393
+        width: 254
+        height: 273
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6dae338df821f440800000000000000
+      internalID: 4967796933260127594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_21
+      rect:
+        serializedVersion: 2
+        x: 5493
+        y: 6393
+        width: 257
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3aba0533deed6ef40800000000000000
+      internalID: 5757534283989298083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_22
+      rect:
+        serializedVersion: 2
+        x: 5754
+        y: 6393
+        width: 252
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbef66d3cf7a85f30800000000000000
+      internalID: 4564582924143754943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_23
+      rect:
+        serializedVersion: 2
+        x: 6009
+        y: 6393
+        width: 254
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cafe9bf1c7a9cbb0800000000000000
+      internalID: -4915213066706158912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_24
+      rect:
+        serializedVersion: 2
+        x: 6265
+        y: 6393
+        width: 252
+        height: 276
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7594bfffca5784570800000000000000
+      internalID: 8451134086650218839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_25
+      rect:
+        serializedVersion: 2
+        x: 6519
+        y: 6394
+        width: 256
+        height: 274
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85d859a6612abcac0800000000000000
+      internalID: -3833792440614679208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_26
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 7048
+        width: 249
+        height: 266
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8c5d638e5ef64560800000000000000
+      internalID: 7297799928085830794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_27
+      rect:
+        serializedVersion: 2
+        x: 737
+        y: 7048
+        width: 242
+        height: 266
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea6418138ab12a290800000000000000
+      internalID: -7880705988745935186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_28
+      rect:
+        serializedVersion: 2
+        x: 1018
+        y: 7052
+        width: 262
+        height: 268
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: deca8ea094df3d2c0800000000000000
+      internalID: -4407901120108122899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_29
+      rect:
+        serializedVersion: 2
+        x: 1309
+        y: 7045
+        width: 250
+        height: 271
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3411793721766b520800000000000000
+      internalID: 2717472754111025475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_30
+      rect:
+        serializedVersion: 2
+        x: 1596
+        y: 7049
+        width: 245
+        height: 265
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a3e0f265f97f4300800000000000000
+      internalID: 238543400107828134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_31
+      rect:
+        serializedVersion: 2
+        x: 1882
+        y: 7049
+        width: 252
+        height: 265
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 317ac0b2a7d69b7d0800000000000000
+      internalID: -2902168113387886829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_32
+      rect:
+        serializedVersion: 2
+        x: 2169
+        y: 7049
+        width: 249
+        height: 267
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cec55eda9579ec7c0800000000000000
+      internalID: -4049132603534123796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_33
+      rect:
+        serializedVersion: 2
+        x: 2460
+        y: 7051
+        width: 182
+        height: 268
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab155c19aacf7f210800000000000000
+      internalID: 1366838821450502586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_34
+      rect:
+        serializedVersion: 2
+        x: 2683
+        y: 7054
+        width: 250
+        height: 267
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5ca21a2784f0b9c0800000000000000
+      internalID: -3913359214821331877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_35
+      rect:
+        serializedVersion: 2
+        x: 2973
+        y: 7048
+        width: 249
+        height: 269
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d13b07de41a3d33d0800000000000000
+      internalID: -3225357896570064099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_36
+      rect:
+        serializedVersion: 2
+        x: 3261
+        y: 7046
+        width: 248
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18b2fea4186ec06e0800000000000000
+      internalID: -1869866302283240575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_37
+      rect:
+        serializedVersion: 2
+        x: 3548
+        y: 7048
+        width: 252
+        height: 268
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12943b8db675f78d0800000000000000
+      internalID: -2846460318766118623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_38
+      rect:
+        serializedVersion: 2
+        x: 3834
+        y: 7048
+        width: 256
+        height: 268
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55e22f3d20ed212e0800000000000000
+      internalID: -2156417167829881259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_39
+      rect:
+        serializedVersion: 2
+        x: 4126
+        y: 7046
+        width: 252
+        height: 265
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15259acc7dab7f850800000000000000
+      internalID: 6410798030599574097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_40
+      rect:
+        serializedVersion: 2
+        x: 4411
+        y: 7044
+        width: 252
+        height: 268
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01d46f8be441a1ea0800000000000000
+      internalID: -5901382033372459760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_41
+      rect:
+        serializedVersion: 2
+        x: 4697
+        y: 7046
+        width: 254
+        height: 268
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bda49df9b81e3bbb0800000000000000
+      internalID: -4921341977987298597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_42
+      rect:
+        serializedVersion: 2
+        x: 4986
+        y: 7046
+        width: 246
+        height: 268
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a11f4a320f26637a0800000000000000
+      internalID: -6397817437103525606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_43
+      rect:
+        serializedVersion: 2
+        x: 5275
+        y: 7049
+        width: 247
+        height: 267
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dca79d6a3f9a5cd0800000000000000
+      internalID: -2568565564165870379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_44
+      rect:
+        serializedVersion: 2
+        x: 5562
+        y: 7046
+        width: 250
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecf28aec3aa538ff0800000000000000
+      internalID: -35084712495534130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_45
+      rect:
+        serializedVersion: 2
+        x: 5851
+        y: 7044
+        width: 249
+        height: 272
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6965964b17135360800000000000000
+      internalID: 7157089638737602923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_46
+      rect:
+        serializedVersion: 2
+        x: 6139
+        y: 7046
+        width: 248
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3eb861f4e23af8140800000000000000
+      internalID: 4724173953425640419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_47
+      rect:
+        serializedVersion: 2
+        x: 6428
+        y: 7049
+        width: 245
+        height: 267
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56b0cff63139d40f0800000000000000
+      internalID: -1131086219707675803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_48
+      rect:
+        serializedVersion: 2
+        x: 6715
+        y: 7051
+        width: 253
+        height: 263
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 581a74ba50977acc0800000000000000
+      internalID: -3699855503606177403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_49
+      rect:
+        serializedVersion: 2
+        x: 7001
+        y: 7049
+        width: 255
+        height: 265
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7df30000c3407b60800000000000000
+      internalID: 7741762251362925948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_50
+      rect:
+        serializedVersion: 2
+        x: 7290
+        y: 7053
+        width: 252
+        height: 261
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2198100585eb71a60800000000000000
+      internalID: 7644788178993383698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_51
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 6754
+        width: 245
+        height: 257
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 306c055c210456510800000000000000
+      internalID: 1541708896808257027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_52
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 6751
+        width: 151
+        height: 261
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21d61d2ef4b2e2b90800000000000000
+      internalID: -7264821526794244846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_53
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 6751
+        width: 248
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99f96d0b1c94f4a40800000000000000
+      internalID: 5354579578211180441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_54
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 6752
+        width: 246
+        height: 259
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f292856b2e5ade50800000000000000
+      internalID: 6834878924967809781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_55
+      rect:
+        serializedVersion: 2
+        x: 1212
+        y: 6752
+        width: 243
+        height: 257
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2d5ac1c767eebd70800000000000000
+      internalID: 9060933933134929199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_56
+      rect:
+        serializedVersion: 2
+        x: 1502
+        y: 6747
+        width: 244
+        height: 267
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ceff4b892163a7dd0800000000000000
+      internalID: -2487616390669467668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_57
+      rect:
+        serializedVersion: 2
+        x: 1788
+        y: 6749
+        width: 245
+        height: 262
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65549923a15776160800000000000000
+      internalID: 7018707299658712406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_58
+      rect:
+        serializedVersion: 2
+        x: 2073
+        y: 6751
+        width: 252
+        height: 263
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e611f52b1222571c0800000000000000
+      internalID: -4506658323992473234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_59
+      rect:
+        serializedVersion: 2
+        x: 2361
+        y: 6752
+        width: 250
+        height: 259
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fdea7ba9025cd150800000000000000
+      internalID: 5898679813433650672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_60
+      rect:
+        serializedVersion: 2
+        x: 2651
+        y: 6751
+        width: 249
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c4d444609a322c50800000000000000
+      internalID: 6638933192529466567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_61
+      rect:
+        serializedVersion: 2
+        x: 2945
+        y: 6755
+        width: 97
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d2398b7bf3409010800000000000000
+      internalID: 1193528648641622743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_62
+      rect:
+        serializedVersion: 2
+        x: 3084
+        y: 6783
+        width: 100
+        height: 179
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18facc6f430a50700800000000000000
+      internalID: 505986682488401793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_63
+      rect:
+        serializedVersion: 2
+        x: 3232
+        y: 6748
+        width: 129
+        height: 121
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a2c04f68dfeaaba0800000000000000
+      internalID: -6076781034324573527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_64
+      rect:
+        serializedVersion: 2
+        x: 3403
+        y: 6751
+        width: 102
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5670c22c93468c030800000000000000
+      internalID: 3515169708396250981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_65
+      rect:
+        serializedVersion: 2
+        x: 3545
+        y: 6751
+        width: 138
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73d6f35be13ed04d0800000000000000
+      internalID: -3166625241942233801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_66
+      rect:
+        serializedVersion: 2
+        x: 3726
+        y: 6750
+        width: 244
+        height: 261
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: becfc86e5d1b08a30800000000000000
+      internalID: 4215564783472934123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_67
+      rect:
+        serializedVersion: 2
+        x: 4010
+        y: 6751
+        width: 102
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68b4e277e44317df0800000000000000
+      internalID: -184308598133863546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_68
+      rect:
+        serializedVersion: 2
+        x: 4152
+        y: 6743
+        width: 252
+        height: 272
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd98041d64e1584b0800000000000000
+      internalID: -5438907685472794145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_69
+      rect:
+        serializedVersion: 2
+        x: 4443
+        y: 6745
+        width: 186
+        height: 274
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dedea966fd04e2820800000000000000
+      internalID: 2895322938689121773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_70
+      rect:
+        serializedVersion: 2
+        x: 4669
+        y: 6864
+        width: 163
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 696c7a2bdead339c0800000000000000
+      internalID: -3948571733834348906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_71
+      rect:
+        serializedVersion: 2
+        x: 4880
+        y: 6751
+        width: 129
+        height: 268
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbafe3ca7c1b21290800000000000000
+      internalID: -7921073323444864324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_72
+      rect:
+        serializedVersion: 2
+        x: 5053
+        y: 6751
+        width: 250
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ceecf84a37b6b1690800000000000000
+      internalID: -7630386999222874388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_73
+      rect:
+        serializedVersion: 2
+        x: 5339
+        y: 6755
+        width: 253
+        height: 263
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6e3fdb554effc560800000000000000
+      internalID: 7336361891857383020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_74
+      rect:
+        serializedVersion: 2
+        x: 5626
+        y: 6753
+        width: 181
+        height: 263
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81c8d2b9e8f45f700800000000000000
+      internalID: 573452001467010072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_75
+      rect:
+        serializedVersion: 2
+        x: 5850
+        y: 6750
+        width: 247
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f306efa49dca1770800000000000000
+      internalID: 8582398078397842420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_76
+      rect:
+        serializedVersion: 2
+        x: 6139
+        y: 6869
+        width: 167
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d16a7a8bad29fb9c0800000000000000
+      internalID: -3909244483435780579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_77
+      rect:
+        serializedVersion: 2
+        x: 6348
+        y: 6753
+        width: 247
+        height: 258
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16f040f4b5d81aa00800000000000000
+      internalID: 766048834936901473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_78
+      rect:
+        serializedVersion: 2
+        x: 6640
+        y: 6829
+        width: 242
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef93acd3a39aa6d90800000000000000
+      internalID: -7103679394613675522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_79
+      rect:
+        serializedVersion: 2
+        x: 6945
+        y: 6750
+        width: 223
+        height: 266
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e2a9fa2a1e78ae60800000000000000
+      internalID: 7973761791114715874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hachicro 1_80
+      rect:
+        serializedVersion: 2
+        x: 7213
+        y: 6753
+        width: 247
+        height: 265
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42a49cc4c154ee4d0800000000000000
+      internalID: -3103467105362032092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

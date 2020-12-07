@@ -9,6 +9,9 @@ TagManager:
   - ItemPickUp
   - FriendlyNPC
   - Vendor
+  - Dialogue
+  - ShakyText
+  - WeavyText
   layers:
   - Default
   - TransparentFX

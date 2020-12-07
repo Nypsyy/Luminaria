@@ -22,7 +22,6 @@ public class ShopUI : MonoBehaviour
         if (test != null)
         {
             ShopSlot[] slots = test.GetComponentsInChildren<ShopSlot>();
-            Debug.Log(slots.Length);
             // Loop through all the slots
             for (int i = 0; i < slots.Length; i++)
             {

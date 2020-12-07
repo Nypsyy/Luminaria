@@ -26,7 +26,10 @@ public class PlayerController : MonoBehaviour
     PlayerCharacter character;
     bool isGrounded;
     bool isWalled;
+    bool inDialogue = false;
+    bool interact = false;
     bool canControl = true;
+    bool nextDialogue = false;
     const float groundRadius = .2f;
     const float wallJumpRadius = .3f;
     Rigidbody2D rb2D;
@@ -49,6 +52,8 @@ public class PlayerController : MonoBehaviour
             else if (isWalled)
                 WallJump();
         }
+
+        if (Input.GetMouseButtonDown(0) && inDialogue) nextDialogue = true;
     }
 
     void FixedUpdate()
@@ -78,6 +83,9 @@ public class PlayerController : MonoBehaviour
         currentWall = Physics2D.OverlapCircle(checkWallJump.position, wallJumpRadius, isWallJump);
         if (currentWall != null && currentWall.gameObject != gameObject)
             isWalled = true;
+
+        
+        
     }
 
     void WallJump()
@@ -117,8 +125,6 @@ public class PlayerController : MonoBehaviour
             case "ItemPickUp":
                 {
                     text.text = "E - Pick up";
-                    Debug.Log("Item");
-
                     interactUI.SetActive(true);
                 }
                 break;
@@ -126,14 +132,78 @@ public class PlayerController : MonoBehaviour
             case "Vendor":
                 {
                     text.text = "E - Shop";
-                    Debug.Log("Vendor");
                     interactUI.SetActive(true);
                 }
                 break;
         }
     }
 
-    void OnCollisionExit2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        switch (other.gameObject.tag)
+        {
+            case "Dialogue":
+                {
+                    if (!inDialogue)
+                    {
+                        Dialogues dialogue = other.gameObject.GetComponent<Dialogues>();
+                        inDialogue = true;
+
+                        dialogue.InitDialogue();
+                        dialogue.LoadDialogue();
+                    }
+                }
+                break;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        switch (other.gameObject.tag)
+        {
+            case "Dialogue":
+                {
+                    Dialogues dialogue = other.gameObject.GetComponent<Dialogues>();
+
+                    if(nextDialogue)
+                    {
+                        dialogue.nextDialogue();
+                        nextDialogue = false;
+                    }
+                }
+                break;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        switch (other.gameObject.tag)
+        {
+            case "Dialogue":
+                {
+                    Transform dialoguePoint = gameObject.transform.Find("/" + other.name + "/DialoguePoint");
+                    foreach (Transform child in dialoguePoint)
+                    {
+                        GameObject.Destroy(child.gameObject);
+                    }
+
+                    Dialogues dialogue = other.gameObject.GetComponent<Dialogues>();
+                    
+
+                    Transform bubble = gameObject.transform.Find("/" + other.name + "/Bubble");
+                    if(bubble != null)  bubble.gameObject.SetActive(false);
+                    
+                    Transform respBubble = gameObject.transform.Find("/" + other.name + "/RespBubble");
+                    if(bubble != null) respBubble.gameObject.SetActive(false);
+
+                    dialogue.InitDialogue();
+                    inDialogue = false;
+                }
+                break;
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D other)
     {
         interactUI.SetActive(false);
     }

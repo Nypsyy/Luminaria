@@ -7,6 +7,7 @@ public class ShopParent : MonoBehaviour
 {
     public List<ItemPickUp> itemPickUps = new List<ItemPickUp>();
     public GameObject shopUI;
+    public Dialogues dialogues;
 
     public List<Item> items = new List<Item>();
 
@@ -20,8 +21,11 @@ public class ShopParent : MonoBehaviour
 
     void Update()
     {
-        if (PlayerInputs.instance.interract && playerNearby)
+        if ((PlayerInputs.instance.interract && playerNearby) || dialogues.openShop && playerNearby)
         {
+            Debug.Log("C'est ouvert");
+            dialogues.openShop = false;
+            PlayerInputs.instance.UpdateControllerMap("Inventory");
             shopUI.SetActive(true);
             if(!isShoploaded) loadShop();
 
@@ -34,6 +38,7 @@ public class ShopParent : MonoBehaviour
 
         if (PlayerInputs.instance.closeUI && playerNearby)
         {
+            PlayerInputs.instance.UpdateControllerMap("World Exploration");
             shopUI.SetActive(false);
         }
 
@@ -62,17 +67,16 @@ public class ShopParent : MonoBehaviour
         }
     }
 
-
-    public void OnCollisionStay2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         playerNearby = true;
-
     }
 
-    public void OnCollisionExit2D(Collision2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
         playerNearby = false;
         isShoploaded = false;
     }
+
 
 }
