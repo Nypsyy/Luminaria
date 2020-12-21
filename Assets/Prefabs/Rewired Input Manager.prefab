@@ -232,6 +232,9 @@ MonoBehaviour:
       - _enabled: 0
         _categoryId: 2
         _layoutId: 0
+      - _enabled: 0
+        _categoryId: 4
+        _layoutId: 0
       _defaultCustomControllerMaps: []
       _startingCustomControllers: []
       _assignMouseOnStart: 1
@@ -250,6 +253,8 @@ MonoBehaviour:
           _id: 5
         - _enabled: 0
           _id: 2
+        - _enabled: 0
+          _id: 8
     actions:
     - _id: 0
       _name: Move Horizontal
@@ -288,9 +293,9 @@ MonoBehaviour:
       _userAssignable: 1
       _categoryId: 2
     - _id: 9
-      _name: Open UI
+      _name: Open Inventory
       _type: 1
-      _descriptiveName: Open UI
+      _descriptiveName: Open Inventory
       _positiveDescriptiveName: 
       _negativeDescriptiveName: 
       _behaviorId: 0
@@ -422,6 +427,24 @@ MonoBehaviour:
       _behaviorId: 0
       _userAssignable: 1
       _categoryId: 2
+    - _id: 27
+      _name: Close Shop
+      _type: 1
+      _descriptiveName: Close Shop
+      _positiveDescriptiveName: 
+      _negativeDescriptiveName: 
+      _behaviorId: 0
+      _userAssignable: 1
+      _categoryId: 6
+    - _id: 28
+      _name: Open Shop
+      _type: 1
+      _descriptiveName: Open Shop
+      _positiveDescriptiveName: 
+      _negativeDescriptiveName: 
+      _behaviorId: 0
+      _userAssignable: 1
+      _categoryId: 2
     actionCategories:
     - _name: Default
       _descriptiveName: Default
@@ -443,16 +466,23 @@ MonoBehaviour:
       _tag: 
       _id: 5
       _userAssignable: 1
+    - _name: Shop
+      _descriptiveName: Shop
+      _tag: 
+      _id: 6
+      _userAssignable: 1
     actionCategoryMap:
       list:
       - categoryId: 0
         actionIds: 
       - categoryId: 2
-        actionIds: 000000000100000009000000040000000500000016000000170000001800000019000000
+        actionIds: 0000000001000000090000000400000005000000160000001700000018000000190000001c000000
       - categoryId: 3
         actionIds: 0e0000000f0000000b0000000a000000
       - categoryId: 5
         actionIds: 100000001100000014000000150000001200000013000000
+      - categoryId: 6
+        actionIds: 1b000000
     inputBehaviors:
     - _id: 0
       _name: Default
@@ -503,6 +533,13 @@ MonoBehaviour:
       _descriptiveName: Menu
       _tag: 
       _id: 3
+      _userAssignable: 1
+      _checkConflictsWithAllCategories: 1
+      _checkConflictsCategoryIds: 
+    - _name: Shop
+      _descriptiveName: Shop
+      _tag: 
+      _id: 4
       _userAssignable: 1
       _checkConflictsWithAllCategories: 1
       _checkConflictsCategoryIds: 
@@ -945,6 +982,17 @@ MonoBehaviour:
         _modifierKey2: 0
         _modifierKey3: 0
       - _actionCategoryId: 0
+        _actionId: 10
+        _elementType: 1
+        _elementIdentifierId: -1
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 105
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
         _actionId: 11
         _elementType: 1
         _elementIdentifierId: -1
@@ -1028,6 +1076,24 @@ MonoBehaviour:
         _modifierKey1: 0
         _modifierKey2: 0
         _modifierKey3: 0
+    - id: 5
+      categoryId: 4
+      layoutId: 0
+      name: 
+      hardwareGuidString: 
+      customControllerUid: 0
+      actionElementMaps:
+      - _actionCategoryId: 0
+        _actionId: 27
+        _elementType: 1
+        _elementIdentifierId: -1
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 101
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
     mouseMaps:
     - id: 1
       categoryId: 1
@@ -1093,7 +1159,7 @@ MonoBehaviour:
       _rules:
       - _tag: 
         _enable: 0
-        _categoryIds: 0100000003000000
+        _categoryIds: 010000000300000004000000
         _layoutIds: 
         _controllerSetSelector:
           _type: 0
@@ -1123,7 +1189,7 @@ MonoBehaviour:
       _rules:
       - _tag: 
         _enable: 0
-        _categoryIds: 0200000003000000
+        _categoryIds: 020000000300000004000000
         _layoutIds: 
         _controllerSetSelector:
           _type: 0
@@ -1153,7 +1219,7 @@ MonoBehaviour:
       _rules:
       - _tag: 
         _enable: 0
-        _categoryIds: 0100000002000000
+        _categoryIds: 010000000200000004000000
         _layoutIds: 
         _controllerSetSelector:
           _type: 0
@@ -1177,21 +1243,51 @@ MonoBehaviour:
           _deviceInstanceGuidString: 
           _customControllerSourceId: -1
           _controllerId: -1
+    - _id: 8
+      _name: Shop
+      _tag: Shop
+      _rules:
+      - _tag: 
+        _enable: 1
+        _categoryIds: 04000000
+        _layoutIds: 
+        _controllerSetSelector:
+          _type: 0
+          _controllerType: 0
+          _hardwareTypeGuidString: 00000000-0000-0000-0000-000000000000
+          _hardwareIdentifier: 
+          _controllerTemplateTypeGuidString: 
+          _deviceInstanceGuidString: 
+          _customControllerSourceId: -1
+          _controllerId: -1
+      - _tag: 
+        _enable: 0
+        _categoryIds: 010000000200000003000000
+        _layoutIds: 
+        _controllerSetSelector:
+          _type: 0
+          _controllerType: 0
+          _hardwareTypeGuidString: 00000000-0000-0000-0000-000000000000
+          _hardwareIdentifier: 
+          _controllerTemplateTypeGuidString: 
+          _deviceInstanceGuidString: 
+          _customControllerSourceId: -1
+          _controllerId: -1
     playerIdCounter: 3
-    actionIdCounter: 26
-    actionCategoryIdCounter: 6
+    actionIdCounter: 29
+    actionCategoryIdCounter: 7
     inputBehaviorIdCounter: 1
-    mapCategoryIdCounter: 4
+    mapCategoryIdCounter: 5
     joystickLayoutIdCounter: 4
     keyboardLayoutIdCounter: 2
     mouseLayoutIdCounter: 1
     customControllerLayoutIdCounter: 1
     joystickMapIdCounter: 9
-    keyboardMapIdCounter: 5
+    keyboardMapIdCounter: 6
     mouseMapIdCounter: 4
     customControllerMapIdCounter: 0
     customControllerIdCounter: 0
     controllerMapLayoutManagerSetIdCounter: 2
-    controllerMapEnablerSetIdCounter: 8
+    controllerMapEnablerSetIdCounter: 9
   _controllerDataFiles: {fileID: 11400000, guid: d21d2b20df8369642b76aafbb2576ba7,
     type: 2}

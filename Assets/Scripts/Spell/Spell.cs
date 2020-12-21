@@ -41,7 +41,7 @@ public class Spell : MonoBehaviour
         {
             if (!abilityUI.activeSelf)
             {
-                //Shoot();
+                Shoot();
             }
         }
         else if (PlayerInputs.instance.releaseCast)

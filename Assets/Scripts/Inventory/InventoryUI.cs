@@ -21,13 +21,20 @@ public class InventoryUI : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))
+        if (PlayerInputs.instance.openInventory)
         {
             inventoryUI.SetActive(!inventoryUI.activeSelf);
             UpdateUI();
         }
 
-        if(Input.GetKeyDown(KeyCode.L))
+        if(PlayerInputs.instance.closeUI)
+        {
+            inventoryUI.SetActive(!inventoryUI.activeSelf);
+            UpdateUI();
+
+        }
+
+        if (Input.GetKeyDown(KeyCode.L))
         {
             inventory.AddCurrency(50);
         }

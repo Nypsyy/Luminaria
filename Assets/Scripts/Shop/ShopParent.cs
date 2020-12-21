@@ -9,7 +9,7 @@ public class ShopParent : MonoBehaviour
     public GameObject shopUI;
     public Dialogues dialogues;
 
-    public List<Item> items = new List<Item>();
+    List<Item> items = new List<Item>();
 
     bool playerNearby;
     bool isShoploaded;
@@ -21,28 +21,30 @@ public class ShopParent : MonoBehaviour
 
     void Update()
     {
-        if ((PlayerInputs.instance.interract && playerNearby) || (dialogues.openShop && playerNearby))
+        if (dialogues.openShop)
         {
-            Debug.Log("C'est ouvert");
+            isShoploaded = false;
+            PlayerInputs.instance.UpdateControllerMap("Shop");
             dialogues.openShop = false;
-            PlayerInputs.instance.UpdateControllerMap("Inventory");
             shopUI.SetActive(true);
-            if(!isShoploaded) loadShop();
+            if (!isShoploaded)
+            {
+                Debug.Log("load shop");
+                loadShop();
+            }
 
             if (Shop.instance.onItemBoughtCallback != null)
             {
+                Debug.Log("callback");
                 Shop.instance.onItemBoughtCallback.Invoke();
             }
-            if (!isShoploaded) loadShop();
         }
 
-        if (PlayerInputs.instance.closeUI && playerNearby)
+        if (PlayerInputs.instance.closeShop)
         {
             PlayerInputs.instance.UpdateControllerMap("World Exploration");
             shopUI.SetActive(false);
         }
-
-        if (!playerNearby) shopUI.SetActive(false);
     }
 
     public void loadShop()

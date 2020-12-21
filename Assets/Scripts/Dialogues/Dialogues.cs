@@ -51,8 +51,6 @@ public class Dialogues : MonoBehaviour
     {
         dialoguePoint.rotation = Quaternion.Euler(0, 0, 0);
 
-        Debug.Log(openShop);
-
         StartCoroutine(WaitTypewriteFx());
 
         if (isTextDisplayed)
@@ -84,6 +82,7 @@ public class Dialogues : MonoBehaviour
     public void LoadDialogue()
     {
         Vector3 spriteTransform = dialoguePoint.transform.position;
+        spriteTransform.z = -4;
         Vector3 tempWidth = new Vector3(0, 0, 0);
         if (dialogues[index] != null)
         {
@@ -129,6 +128,7 @@ public class Dialogues : MonoBehaviour
                         case 'n':
                             {
                                 spriteTransform = dialoguePoint.transform.position;
+                                spriteTransform.z = -4;
                                 tempWidth.y = 0.5f;
                                 spriteTransform.y -= tempWidth.y;
                             }
@@ -263,7 +263,7 @@ public class Dialogues : MonoBehaviour
         responseOptions = dialogueData.GetResponse();
 
         Vector3 resp1Transform = respBubble.transform.position;
-        resp1Transform.z = 0;
+        resp1Transform.z = -4;
         resp1Transform.x -= 1;
         resp1Transform.y += 0.6f;
         Vector3 temp1Width = new Vector3(0, 0, 0);
@@ -281,7 +281,7 @@ public class Dialogues : MonoBehaviour
             temp1Width.x += 0.3f;
             resp1Transform += temp1Width;
             go.transform.localPosition += resp1Transform;
-            go.transform.position.Set(go.transform.position.x, go.transform.position.y, 0);
+            go.transform.position.Set(go.transform.position.x, go.transform.position.y, -4);
             renderer.sprite = sprite;
         }
 
@@ -314,8 +314,6 @@ public class Dialogues : MonoBehaviour
     public void OnClickFirstChoice()
     {
         Transform dialoguePoint = gameObject.transform.Find("/" + this.name + "/DialoguePoint");
-
-        Debug.Log("Oui");
         if (dialogueData.GetResponse()[0].spriteData.name.Equals("OpenShop"))
         {
 
@@ -349,6 +347,8 @@ public class Dialogues : MonoBehaviour
 
     public void OnClickSecondChoice()
     {
+        Debug.Log("Non");
+
         Transform dialoguePoint = gameObject.transform.Find("/" + this.name + "/DialoguePoint");
 
         if (dialogueData.GetResponse()[1].spriteData.name.Equals("CloseDialogue"))

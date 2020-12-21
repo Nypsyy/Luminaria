@@ -17,8 +17,9 @@ public class PlayerInputs : MonoBehaviour
     [HideInInspector] public bool menuDown;
     [HideInInspector] public bool menuRight;
 
-    [HideInInspector] public bool openUI;
+    [HideInInspector] public bool openInventory;
     [HideInInspector] public bool closeUI;
+    [HideInInspector] public bool closeShop;
 
     [HideInInspector] public float moveHorizontal;
     [HideInInspector] public bool jump;
@@ -64,8 +65,9 @@ public class PlayerInputs : MonoBehaviour
         menuDown = player.GetButtonDown("Menu Down");
         menuRight = player.GetButtonDown("Menu Right");
 
-        openUI = player.GetButtonDown("Open UI");
+        openInventory = player.GetButtonDown("Open Inventory");
         closeUI = player.GetButtonDown("Close UI");
+        closeShop = player.GetButtonDown("Close Shop");
 
         jump = player.GetButtonDown("Jump");
         moveHorizontal = player.GetAxisRaw("Move Horizontal");
@@ -91,7 +93,7 @@ public class PlayerInputs : MonoBehaviour
             UpdateControllerMap("World Exploration");
             GamemodeManager.instance.state = Gamemode.WORLD_EXPLORATION;
         }
-        if (openUI)
+        if (openInventory)
         {
             UpdateControllerMap("Inventory");
             GamemodeManager.instance.state = Gamemode.INVENTORY_OPEN;

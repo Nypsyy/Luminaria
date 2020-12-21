@@ -114,12 +114,12 @@ MonoBehaviour:
   interactable: {fileID: 0}
   interact: 0
   item:
-    name: New Item
-    icon: {fileID: 0}
+    name: Map
+    icon: {fileID: 21300000, guid: 34102981c7e63b646b05313914b723a6, type: 3}
     isPickedUp: 0
     itemType: 0
     equipSlot: 0
     defenseModifier: 0
     damageModifier: 0
-    price: 0
-  itemUI: {fileID: 0}
+    price: 50
+  itemUI: {fileID: 4584273531409408602}

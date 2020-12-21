@@ -4,7 +4,6 @@ public class ItemPickUp : Interactable
 {
 
     public Item item;   // Item to put in the inventory on pickup
-    public GameObject itemUI;
 
     // When the player interacts with the items
     public override void Interact()
@@ -23,7 +22,7 @@ public class ItemPickUp : Interactable
         if (wasPickedUp)
         {
             item.isPickedUp = true;
-            itemUI.SetActive(false);
+            this.gameObject.SetActive(false);
         }
     }
 
