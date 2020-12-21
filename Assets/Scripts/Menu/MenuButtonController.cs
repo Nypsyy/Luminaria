@@ -40,8 +40,6 @@ public class MenuButtonController : MonoBehaviour
                 case 1:
                     return;
                 case 2:
-                    return;
-                case 3:
                     Application.Quit();
                     return;
             }

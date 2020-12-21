@@ -14,6 +14,7 @@ public class EarthSpell : MonoBehaviour
     Element element = Element.EARTH;
 
     void Start() {
+        spellManager = FindObjectOfType<Spell>();
         playerCharacter = FindObjectOfType<PlayerCharacter>();
 
         playerCharacter.ReduceMana(manaCost);
