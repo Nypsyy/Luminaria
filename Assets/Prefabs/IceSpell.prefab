@@ -85,6 +85,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   damage: 50
+  manaCost: 40
   rb: {fileID: 5978187808529323798}
 --- !u!1 &2905550995244626923
 GameObject:

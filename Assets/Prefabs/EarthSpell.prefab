@@ -78,6 +78,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 7919321619235728623}
+  spellManager: {fileID: 0}
+  manaCost: 50
 --- !u!1 &7919321619235728623
 GameObject:
   m_ObjectHideFlags: 0

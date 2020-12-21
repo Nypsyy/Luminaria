@@ -6,11 +6,21 @@ public class GameManager : MonoBehaviour
 {
     Inventory inventory;
     EquipmentManager equipmentManager;
-    
+    [SerializeField] GameObject pauseMenu;
+
     void Start()
     {
         inventory = Inventory.instance;
         equipmentManager = EquipmentManager.instance;
+    }
+
+    void Update()
+    {
+        if (PlayerInputs.instance.openMenu)
+        {
+            pauseMenu.SetActive(true);
+            Time.timeScale = 0;
+        }
     }
 
     public void SavePlayer()
