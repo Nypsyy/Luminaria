@@ -86,6 +86,7 @@ public class PlayerInputs : MonoBehaviour
         if (openMenu)
         {
             UpdateControllerMap("Menu");
+            
             GamemodeManager.instance.state = Gamemode.MENU;
         }
         else if (menuBack)

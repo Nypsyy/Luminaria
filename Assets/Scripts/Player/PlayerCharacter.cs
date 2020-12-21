@@ -8,8 +8,7 @@ public class PlayerCharacter : MonoBehaviour
     #region Singleton
 
     public static PlayerCharacter instance;
-    void Awake()
-    {
+    void Awake() {
         if (instance != null) return;
         instance = this;
     }
@@ -23,9 +22,17 @@ public class PlayerCharacter : MonoBehaviour
     [SerializeField] Vector3 scale;
 
     public Animator animator;
+
     public float maxHealth;
     public float currentHealth;
     public HealthBar healthBar;
+    public float maxMana;
+    public float currentMana;
+    public ManaBar manaBar;
+    public float manaRegeneration;
+
+    public bool canCastSpells = true;
+    public bool isCasting = false;
 
     public UnityEvent OnRespawnEvent;
     public UnityEvent OnDeathEvent;
@@ -34,12 +41,14 @@ public class PlayerCharacter : MonoBehaviour
     bool isInvincible = false;
     float delayBetweenBlinks;
 
-    void Start()
-    {
+    void Start() {
         controller = GetComponent<PlayerController>();
-        currentHealth = maxHealth;
         delayBetweenBlinks = invincinbilityDelay / (blinkNumber * 2);
-        healthBar.SetMaxHealth(currentHealth);
+
+        currentHealth = maxHealth;
+        currentMana = maxMana;
+        healthBar.SetMaxHealth(maxHealth);
+        manaBar.SetMaxMana(maxMana);
 
         if (OnRespawnEvent == null)
             OnRespawnEvent = new UnityEvent();
@@ -47,28 +56,40 @@ public class PlayerCharacter : MonoBehaviour
             OnDeathEvent = new UnityEvent();
     }
 
-    void Update()
-    {
+    void Update() {
         if (currentHealth <= 0)
             Die();
+        if (currentHealth > maxHealth)
+            currentHealth = maxHealth;
+
+        if (currentMana <= 10f && canCastSpells) {
+            StartCoroutine(OutOfMana());
+        }
+        if (currentMana > maxMana)
+            currentMana = maxMana;
+
+        if (!canCastSpells)
+            GetComponentInChildren<SpriteRenderer>().color = Color.blue;
+        else
+            GetComponentInChildren<SpriteRenderer>().color = Color.white;
+
+        if (currentMana < maxMana && !isCasting)
+            AugmentMana(manaRegeneration);
     }
 
-    void Die()
-    {
+    void Die() {
         Debug.Log("PLAYER: Died");
         StartCoroutine(Dying());
         OnDeathEvent.Invoke();
     }
 
-    public void TakeDamage(bool kockback, float xDistance, float damage)
-    {
+    public void TakeDamage(bool kockback, float xDistance, float damage) {
         if (isInvincible) return;
 
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
 
-        if (currentHealth <= 0)
-        {
+        if (currentHealth <= 0) {
             currentHealth = 0;
             return;
         }
@@ -79,43 +100,49 @@ public class PlayerCharacter : MonoBehaviour
         StartCoroutine(Invincible());
     }
 
-    void OnTriggerStay2D(Collider2D other)
-    {
-        if (other.gameObject.tag == "Ennemy")
-        {
+    void OnTriggerStay2D(Collider2D other) {
+        if (other.gameObject.tag == "Ennemy") {
             EnnemyBehavior ennemy = other.gameObject.GetComponent<EnnemyBehavior>();
             TakeDamage(true, transform.position.x - other.transform.position.x, ennemy.damage);
         }
 
     }
 
-    void Respawn()
-    {
+    void Respawn() {
         animator.SetBool("IsDead", false);
         transform.position = respawnPoint.position;
         currentHealth = maxHealth;
         healthBar.SetHealth(currentHealth);
+        canCastSpells = true;
 
         OnRespawnEvent.Invoke();
     }
 
-    IEnumerator Dying()
-    {
+    public void ReduceMana(float amount) {
+        currentMana -= amount;
+        manaBar.SetMana(currentMana);
+    }
+
+    public void AugmentMana(float amount) {
+        currentMana += amount;
+        manaBar.SetMana(currentMana);
+    }
+
+    IEnumerator Dying() {
         animator.SetBool("IsDead", true);
+        canCastSpells = false;
         yield return new WaitForSeconds(2);
         Respawn();
     }
 
-    IEnumerator Invincible()
-    {
+    IEnumerator Invincible() {
         Debug.Log("PLAYER: Invincible");
         isInvincible = true;
         animator.SetTrigger("IsHurt");
 
         yield return new WaitForSeconds(.2f);
 
-        for (float i = 0; i < invincinbilityDelay; i += delayBetweenBlinks)
-        {
+        for (float i = 0; i < invincinbilityDelay; i += delayBetweenBlinks) {
             if (sprite.transform.localScale != Vector3.zero)
                 sprite.transform.localScale = Vector3.zero;
             else
@@ -128,4 +155,9 @@ public class PlayerCharacter : MonoBehaviour
         isInvincible = false;
     }
 
+    IEnumerator OutOfMana() {
+        canCastSpells = false;
+        yield return new WaitUntil(() => currentMana == maxMana);
+        canCastSpells = true;
+    }
 }
